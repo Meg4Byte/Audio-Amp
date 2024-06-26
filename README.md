@@ -43,6 +43,20 @@ The circuit contains the following important sub-blocks:
 5. Output filter
 6. Negative feedback
 
+In the following section each block is discussed briefly.
+
+#### Input filter
+
+#### Op-amp
+
+#### Bias circuit
+
+#### AB stage (power amplifier)
+
+#### Output filter
+
+#### Negative feedback
+
 ## Schematic 
 
 
