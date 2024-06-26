@@ -47,15 +47,27 @@ In the following section each block is discussed briefly.
 
 #### Input filter
 
+- Input filter is a passive RC filter , changing the RC constant will change the cut-off frequency of the filter.
+
 #### Op-amp
+
+- Error amp. the purpose of this sub-block is to track input and output signals and provide output such that error is as small as possible.
 
 #### Bias circuit
 
+-This bias circuit is also called VBE multiplier , because it multiplies the VBE voltage of the BJT in order to provide bias.Very popular bias stage before power stage.
+
 #### AB stage (power amplifier)
+
+-AB stage is the most popular power amp stage with high efficeny and no cross-over distortions , it is made of two BJT in push-pull configuration. 
 
 #### Output filter
 
+- Output filter is a passive RC filter , similarly to input filterthe RC constant will change the cut-off frequency of the filter.
+
 #### Negative feedback
+
+- Negative feedback is essential to eliminate erros.The output signal is measured , scaled and fed back to OP amp , and the output of the OP amp generates signal to supress the error. 
 
 ## Schematic 
 
