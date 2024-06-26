@@ -20,27 +20,29 @@ Audio amplifier design and simulation in MicroCap-12
   
 ## Project Description
 
-Projektovati audio pojacavac. Mora sadržati naponski pojacavacki stepen i AB izlazni
-stepen. Realizovati pojacavacki stepen pomoću tranzistora ili OP, sloboda u izboru. Izlazni AB
-stepen realizovati pomoću tranzistora. Tranzistor moze biti bipolarni ili MOSFET. Izabrati sve
-komponente i objasniti njihov izbor, prikazati proracun kritičnih komponenti. Proracunati
-maksimalni koeficijent korisnog dejstva.
-Izvršiti simulaciju kola u Microcap-u. Preko DC analiza proveriti mirne radne struje
-pojačavača. Preko tranzijentnih simulacija proveriti funkcionisanje rada kola, pronaci max
-ulazni napon, izmeriti pojačanje kola u linarnom rezimu. Preko AC analize proveriti propusni opseg
-pojacavaca. Parametri zvučnika su otpornost R = 8Ω i snaga P = 40W.
+This project simulates an audio amplifier using MicroCap12.Requirements are as follows : 
+
+Design an audio amplifier. It must contain a voltage amplification stage and an AB output stage. Implement the amplification stage using transistors or op-amps, with freedom of choice. Implement the AB output stage using transistors. The transistor can be bipolar or MOSFET. Select all components and explain their choice, show the calculation of critical components. Calculate the maximum efficiency coefficient. Perform circuit simulation in Microcap. Use DC analysis to check the quiescent currents of the amplifier. Use transient simulations to verify the circuit's operation, find the maximum input voltage, and measure the circuit gain in the linear regime. Use AC analysis to check the bandwidth of the amplifier. The speaker parameters are resistance R = 8Ω and power P = 40W.
+
+## Sub-blocks
+
+The circuit contains the following important sub-blocks:
+
+1. Input filter
+2. Op-amp
+3. Bias circuit
+4. AB stage (power amplifier)
+5. Output filter
+6. Negative feedback
+
+## Schematic 
 
 
+<p align="center">
+  <img src="https://github.com/Meg4Byte/Audio-Amp/assets/121357383/4b6435d9-10c4-4822-9e3d-7681a68e7ca5">
+</p>
 
-This project simulates an audio amplifier using MicroCap12. It aims to demonstrate the control of a stepper motor with microstepping, visualize output signals on waveforms, and provide an accurate model of a stepper motor. The project is designed to offer hands-on experience for those interested in control theory and how does stepper motor achieve such small angles.
 
-## Features
-
-- Control stepper motor with microstepping
-- Visualize microstepping signals
-- Display output signals: motor acceleration, velocity, torque, and angle
-- Input signals: sine and cosine voltages for microstepping
-- Accurate simulation model of a stepper motor
 
 ## Installation Instructions
 
