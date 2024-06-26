@@ -9,6 +9,7 @@ Audio amplifier design and simulation in MicroCap-12
 
 - [Project Description](#project-description)
 - [Features](#features)
+- [Schematic](#schematic)
 - [Installation Instructions](#installation-instructions)
 - [Usage Instructions](#usage-instructions)
    - [Open the Project](#open-the-project)
@@ -19,7 +20,19 @@ Audio amplifier design and simulation in MicroCap-12
   
 ## Project Description
 
-This project simulates a two-phase stepper motor with microstepping using MicroCap12. It aims to demonstrate the control of a stepper motor with microstepping, visualize output signals on waveforms, and provide an accurate model of a stepper motor. The project is designed to offer hands-on experience for those interested in control theory and how does stepper motor achieve such small angles.
+Projektovati audio pojacavac. Mora sadržati naponski pojacavacki stepen i AB izlazni
+stepen. Realizovati pojacavacki stepen pomoću tranzistora ili OP, sloboda u izboru. Izlazni AB
+stepen realizovati pomoću tranzistora. Tranzistor moze biti bipolarni ili MOSFET. Izabrati sve
+komponente i objasniti njihov izbor, prikazati proracun kritičnih komponenti. Proracunati
+maksimalni koeficijent korisnog dejstva.
+Izvršiti simulaciju kola u Microcap-u. Preko DC analiza proveriti mirne radne struje
+pojačavača. Preko tranzijentnih simulacija proveriti funkcionisanje rada kola, pronaci max
+ulazni napon, izmeriti pojačanje kola u linarnom rezimu. Preko AC analize proveriti propusni opseg
+pojacavaca. Parametri zvučnika su otpornost R = 8Ω i snaga P = 40W.
+
+
+
+This project simulates an audio amplifier using MicroCap12. It aims to demonstrate the control of a stepper motor with microstepping, visualize output signals on waveforms, and provide an accurate model of a stepper motor. The project is designed to offer hands-on experience for those interested in control theory and how does stepper motor achieve such small angles.
 
 ## Features
 
