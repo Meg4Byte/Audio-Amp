@@ -2,7 +2,7 @@
 Audio amplifier design and simulation in MicroCap-12 
 
 <p align="center">
-  <img src="https://github.com/Meg4Byte/Stepper-Motor-Simulation/assets/121357383/4b961d33-7b76-4248-8d65-e1425d1683c8">
+  <img src="https://github.com/Meg4Byte/Audio-Amp/assets/121357383/4b6435d9-10c4-4822-9e3d-7681a68e7ca5">
 </p>
 
 ## Table of Contents
