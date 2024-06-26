@@ -2,7 +2,7 @@
 Audio amplifier design and simulation in MicroCap-12 
 
 <p align="center">
-  <img src="https://github.com/Meg4Byte/Audio-Amp/assets/121357383/4b6435d9-10c4-4822-9e3d-7681a68e7ca5">
+  <img src="https://github.com/Meg4Byte/Audio-Amp/assets/121357383/06ed1c49-b9c9-40ae-8fb3-c6125215c91d">
 </p>
 
 ## Table of Contents
