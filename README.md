@@ -8,7 +8,7 @@ Audio amplifier design and simulation in MicroCap-12
 ## Table of Contents
 
 - [Project Description](#project-description)
-- [Sub-blocks](#features)
+- [Sub-blocks](#sub-blocks)
 - [Schematic](#schematic)
 - [Installation Instructions](#installation-instructions)
 - [Usage Instructions](#usage-instructions)
