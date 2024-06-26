@@ -9,6 +9,12 @@ Audio amplifier design and simulation in MicroCap-12
 
 - [Project Description](#project-description)
 - [Sub-blocks](#sub-blocks)
+  - [Input filter](#input-filter)
+  - [Op-amp](#op-amp)
+  - [Bias circuit](#bias-circuit)
+  - [AB stage (power amplifier)](#ab-stage)
+  - [Output filter](#output-filter)
+  - [Negative feedback](#negative-feedback)
 - [Schematic](#schematic)
 - [Installation Instructions](#installation-instructions)
 - [Usage Instructions](#usage-instructions)
