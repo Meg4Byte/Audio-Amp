@@ -1,0 +1,5227 @@
+[Main]
+FileType=CIR
+Version=12.00
+Program=Micro-Cap
+Component Version=10.00
+Shape Version=11.00
+Screen=1920,1080
+MCAPVersion=12.2.0.5
+Key ID=Demo
+NLCnt=115
+TXCnt=13
+
+[shapedef]
+Name=Battery
+Line=0,0,22,0
+Line=22,-3,22,3
+Line=26,-7,26,7
+Line=26,0,48,0
+Current=32,8,16,8
+
+[shapedef]
+Name=Bjt.root
+Line=0,0,13,0
+Rectangle=13,-12,15,12
+Current=32,-24,32,-16
+Current=32,24,32,16
+Current=0,-8,8,-8
+PolyOpen=3
+PolyLine=24,-24
+PolyLine=24,-12
+PolyLine=14,-2
+PolyOpen=3
+PolyLine=24,24
+PolyLine=24,12
+PolyLine=14,2
+
+[shapedef]
+Name=Capacitor
+Line=0,0,22,0
+Line=22,-8,22,8
+Line=26,-8,26,8
+Line=26,0,48,0
+Current=32,12,16,12
+
+[shapedef]
+Name=Ground
+Line=0,0,12,0
+Line=12,-8,12,8
+Line=18,-4,18,4
+Line=24,0,24,0
+
+[shapedef]
+Name=Minus.root
+Line=-2,0,2,0
+
+[shapedef]
+Name=NPN
+Root="Bjt.root",0,0,0
+PolyClosed=3
+PolyLine=20,12
+PolyLine=24,12
+PolyLine=24,8
+
+[shapedef]
+Name=Opamp5
+Root="Opamp.root",0,0,0
+Root="Plus.root",25,-4,0
+Root="Minus.root",25,52,0
+Line=32,56,32,34
+Line=32,-8,32,13
+
+[shapedef]
+Name=Opamp.root
+Line=0,48,6,48
+Line=0,0,5,0
+Line=6,-4,6,52
+Line=6,-4,48,24
+Line=6,52,48,24
+Line=48,24,72,24
+Line=10,12,14,12
+Line=12,10,12,14
+Line=10,36,14,36
+Line=4,0,6,0
+
+[shapedef]
+Name=Plus.root
+Line=-2,0,2,0
+Line=0,-2,0,2
+
+[shapedef]
+Name=PNP
+Root="Bjt.root",0,0,0
+PolyClosed=3
+PolyLine=17,-5
+PolyLine=21,-5
+PolyLine=17,-9
+Line=16,-4,14,-2
+Line=16,4,14,2
+
+[shapedef]
+Name=Resistor
+PolyOpen=12
+PolyLine=0,0
+PolyLine=0,0
+PolyLine=12,0
+PolyLine=14,-4
+PolyLine=18,4
+PolyLine=22,-4
+PolyLine=26,4
+PolyLine=30,-4
+PolyLine=34,4
+PolyLine=36,0
+PolyLine=48,0
+PolyLine=48,0
+Current=32,8,16,8
+
+[shapedef]
+Name=Sine_Source
+Root="Vsource.root",0,0,0
+Line=24,-6,26,-4
+Line=26,-4,26,-2
+Line=26,-2,22,2
+Line=22,2,22,4
+Line=22,4,24,6
+
+[shapedef]
+Name=Vsource.root
+Line=0,0,12,0
+Line=36,0,48,0
+Ellipse=12,-12,36,12
+FColor=None
+Line=7,5,7,9
+Root="Plus.root",41,7,0
+Current=32,16,16,16
+
+[compdef]
+Name=Sine Source
+Definition=Sine source
+Shape=Sine_Source
+Mask=4864
+memo=Sine Source
+Label Offset=18,12,15,12
+PinCnt=2
+Pin="Plus",6,0,-6,-6
+Pin="Minus",0,0,-19,-6
+
+[compdef]
+Name=Ground
+Definition=Ground
+Shape=Ground
+Mask=1793
+Used=448
+memo=Ground
+Label Offset=0,0,0,0
+PinCnt=1
+Pin="PinA",0,0,-3,-7
+
+[compdef]
+Name=Opamp
+Definition=Opamp
+Shape=Opamp5
+Mask=4097
+Used=17
+memo=Opamp
+Label Offset=44,29,-14,39
+PinCnt=5
+Pin="Plus input",0,0,-31,-7
+Pin="Minus input",0,6,-33,20
+Pin="VEE",4,7,3,-5
+Pin="Output",9,3,-13,-4
+Pin="VCC",4,-1,5,14
+
+[compdef]
+Name=Capacitor
+Definition=Capacitor
+Shape=Capacitor
+Mask=6657
+Used=141
+memo=Capacitor
+Label Offset=16,12,12,12
+PinCnt=2
+Pin="Plus",6,0,-3,-5
+Pin="Minus",0,0,-14,-5
+
+[compdef]
+Name=Resistor
+Definition=Resistor
+Shape=Resistor
+Mask=7425
+Used=306
+memo=Resistor
+Label Offset=18,6,8,11
+PinCnt=2
+Pin="Plus",6,0,-10,-4
+Pin="Minus",0,0,-14,-4
+
+[compdef]
+Name=NPN
+Definition=NPN
+Shape=NPN
+Mask=5889
+Used=22
+memo=NPN Transistor
+Label Offset=37,-17,-14,33
+PinCnt=3
+Pin="Collector",3,-3,4,14
+Pin="Base",0,0,-18,-3
+Pin="Emitter",3,3,5,1
+
+[compdef]
+Name=PNP
+Definition=PNP
+Shape=PNP
+Mask=4609
+Used=5
+memo=PNP Transistor
+Label Offset=37,-13,-8,35
+PinCnt=3
+Pin="Collector",3,3,6,3
+Pin="Base",0,0,-19,-3
+Pin="Emitter",3,-3,6,15
+
+[compdef]
+Name=Battery
+Definition=Battery
+Shape=Battery
+Mask=7937
+Used=61
+memo=Battery
+Label Offset=19,7,10,13
+PinCnt=2
+Pin="Plus",6,0,-4,-5
+Pin="Minus",0,0,-10,-5
+
+[Circuit]
+Window Placement=2,3, 0,586, -8,-31, 52,52,1053,435
+Default Object=Color=#000080
+Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Default Object Apply Border To Text=No
+Default Object Apply Fill To Text=No
+Default Object GridSnap=No
+NodeVoltageFormat=3
+CurrentFormat=3
+PowerFormat=3
+PathDelayFormat=3
+WarningFormat=3
+GridTextFormulaFormat=3
+Window Placement in Transient Analysis=2,3, -1,-1, -8,-31, 104,104,1305,472
+Window Placement in AC Analysis=2,3, -1,-1, -8,-31, 0,0,1201,368
+Window Placement in DC Analysis=2,3, -1,-1, -8,-31, 0,0,1201,368
+Window Placement in HmDistortion Analysis=1,2, 0,582, -8,-31, 52,52,1053,435
+SpiceType=AMBIGUOUS
+Title_Block_Border=None
+Title_Block=False
+Show Nodes=True
+Show Voltages=True
+Show Current=True
+Show Power=True
+Show Condition=True
+Show Pin Connections=False
+Show Connection Warnings=False
+Show Cross=False
+Show Attribute Text=True
+Show Grid Text=False
+
+[Comp]
+Name=Sine Source
+Px=192,376
+Rot=3
+
+[Attr]
+ON=-35,-32,PART
+V=Vg
+Style=8192
+
+[Attr]
+ON=-50,-40,MODEL
+V=1MHZ
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=192,376
+Rot=7
+
+[Comp]
+Name=Opamp
+Px=408,328
+
+[Attr]
+ON=44,29,PART
+V=X1
+Style=8192
+
+[Attr]
+ON=44,43,MODEL
+V=LM6164
+
+[Attr]
+ON=44,71,PACKAGE
+V=DIP8
+
+[Comp]
+Name=Capacitor
+Px=368,328
+Rot=2
+
+[Attr]
+ON=-32,-41,PART
+V=C1
+Style=8192
+
+[Attr]
+ON=-34,-25,CAPACITANCE
+V=22u
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=192,328,296,328
+
+[Wire]
+Pxs=360,328,368,328
+
+[Comp]
+Name=Resistor
+Px=368,344
+Rot=7
+
+[Attr]
+ON=7,10,PART
+V=R1
+Style=8192
+
+[Attr]
+ON=5,24,RESISTANCE
+V=1k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=368,392
+Rot=7
+
+[Wire]
+Pxs=368,328,368,344
+
+[Wire]
+Pxs=368,328,408,328
+
+[Comp]
+Name=NPN
+Px=1000,248
+
+[Attr]
+ON=28,-13,PART
+V=Q5
+Style=8192
+
+[Attr]
+ON=28,1,MODEL
+V=ZXTN2020F
+
+[Attr]
+ON=28,29,PACKAGE
+V=SOT-23
+
+[Comp]
+Name=PNP
+Px=1000,440
+
+[Attr]
+ON=28,-13,PART
+V=Q6
+Style=8192
+
+[Attr]
+ON=28,1,MODEL
+V=ZXTP2009Z
+
+[Attr]
+ON=28,29,PACKAGE
+V=SOT-89
+
+[Comp]
+Name=Resistor
+Px=1328,360
+Rot=7
+
+[Attr]
+ON=12,11,PART
+V=Rp
+Style=8192
+
+[Attr]
+ON=17,26,RESISTANCE
+V=8
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=1328,408
+Rot=7
+
+[Comp]
+Name=Resistor
+Px=448,608
+Rot=1
+
+[Attr]
+ON=12,7,PART
+V=R2
+Style=8192
+
+[Attr]
+ON=5,22,RESISTANCE
+V=100
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Capacitor
+Px=448,704
+Rot=3
+
+[Attr]
+ON=15,-34,PART
+V=C4
+Style=8192
+
+[Attr]
+ON=8,-17,CAPACITANCE
+V=220u
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=448,704
+Rot=7
+
+[Wire]
+Pxs=408,376,408,608
+
+[Wire]
+Pxs=408,608,448,608
+
+[Wire]
+Pxs=440,384,440,488
+
+[Wire]
+Pxs=440,488,672,488
+
+[Wire]
+Pxs=440,176,440,320
+
+[Wire]
+Pxs=440,176,672,176
+
+[Comp]
+Name=Battery
+Px=144,224
+Rot=5
+COff=7,162,200,39,-12
+
+[Attr]
+ON=19,-39,PART
+V=V6
+Style=8192
+
+[Attr]
+ON=18,-24,VALUE
+V=27
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Battery
+Px=128,544
+Rot=5
+
+[Attr]
+ON=16,-38,PART
+V=V7
+Style=8192
+
+[Attr]
+ON=13,-25,VALUE
+V=-27
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=128,544
+Rot=7
+
+[Wire]
+Pxs=448,608,528,608
+
+[Comp]
+Name=Capacitor
+Px=320,224
+Rot=3
+
+[Attr]
+ON=16,-37,PART
+V=C2
+Style=8192
+
+[Attr]
+ON=9,-23,CAPACITANCE
+V=100p
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=PNP
+Px=696,224
+Rot=6
+
+[Attr]
+ON=-46,-13,PART
+V=Q1
+Style=8192
+
+[Attr]
+ON=-85,1,MODEL
+V=BC178
+
+[Attr]
+ON=-66,29,PACKAGE
+V=TO-18
+
+[Comp]
+Name=PNP
+Px=736,224
+
+[Attr]
+ON=28,-13,PART
+V=Q2
+Style=8192
+
+[Attr]
+ON=28,1,MODEL
+V=BC178
+
+[Attr]
+ON=28,29,PACKAGE
+V=TO-18
+
+[Wire]
+Pxs=760,176,760,200
+
+[Wire]
+Pxs=672,176,672,200
+
+[Wire]
+Pxs=672,176,760,176
+
+[Wire]
+Pxs=696,224,712,224
+
+[Wire]
+Pxs=672,248,672,272
+
+[Wire]
+Pxs=712,224,712,272
+
+[Wire]
+Pxs=712,224,736,224
+
+[Comp]
+Name=NPN
+Px=696,464
+Rot=6
+
+[Attr]
+ON=-46,-13,PART
+V=Q3
+Style=8192
+
+[Attr]
+ON=-77,1,MODEL
+V=BC108A
+
+[Attr]
+ON=-66,29,PACKAGE
+V=TO-18
+
+[Comp]
+Name=NPN
+Px=720,464
+
+[Attr]
+ON=28,-13,PART
+V=Q4
+Style=8192
+
+[Attr]
+ON=28,1,MODEL
+V=BC108A
+
+[Attr]
+ON=28,29,PACKAGE
+V=TO-18
+
+[Wire]
+Pxs=672,488,744,488
+
+[Wire]
+Pxs=696,464,704,464
+
+[Wire]
+Pxs=704,432,704,464
+
+[Wire]
+Pxs=672,432,704,432
+
+[Wire]
+Pxs=704,464,720,464
+
+[Wire]
+Pxs=672,432,672,440
+
+[Comp]
+Name=Resistor
+Px=672,368
+Rot=1
+
+[Attr]
+ON=14,11,PART
+V=R4
+Style=8192
+
+[Attr]
+ON=8,25,RESISTANCE
+V=20k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=672,416,672,432
+
+[Comp]
+Name=NPN
+Px=888,352
+COff=23,888,363,14,4
+
+[Attr]
+ON=28,-13,PART
+V=Q7
+Style=8192
+
+[Attr]
+ON=28,1,MODEL
+V=BC108A
+
+[Attr]
+ON=28,29,PACKAGE
+V=TO-18
+
+[Comp]
+Name=Resistor
+Px=864,304
+Rot=1
+
+[Attr]
+ON=8,11,PART
+V=R5
+Style=8192
+
+[Attr]
+ON=8,25,RESISTANCE
+V=23
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Resistor
+Px=864,376
+Rot=1
+
+[Attr]
+ON=8,11,PART
+V=R6
+Style=8192
+
+[Attr]
+ON=8,25,RESISTANCE
+V=80
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=864,352,888,352
+
+[Wire]
+Pxs=864,352,864,376
+
+[Wire]
+Pxs=760,248,864,248
+
+[Wire]
+Pxs=864,248,864,304
+
+[Wire]
+Pxs=912,248,912,328
+
+[Wire]
+Pxs=864,248,912,248
+
+[Wire]
+Pxs=744,440,864,440
+
+[Wire]
+Pxs=864,424,864,440
+
+[Wire]
+Pxs=912,376,912,440
+
+[Wire]
+Pxs=864,440,912,440
+
+[Wire]
+Pxs=912,248,1000,248
+
+[Wire]
+Pxs=912,440,1000,440
+
+[Wire]
+Pxs=1024,272,1024,344
+
+[Comp]
+Name=Capacitor
+Px=1144,344
+Rot=4
+
+[Attr]
+ON=16,-43,PART
+V=C6
+Style=8192
+
+[Attr]
+ON=6,-27,CAPACITANCE
+V=1000u
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Capacitor
+Px=1240,440
+Rot=5
+
+[Attr]
+ON=17,-39,PART
+V=C7
+Style=8192
+
+[Attr]
+ON=12,-24,CAPACITANCE
+V=100n
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Resistor
+Px=1240,344
+Rot=1
+
+[Attr]
+ON=16,11,PART
+V=R7
+Style=8192
+
+[Attr]
+ON=14,25,RESISTANCE
+V=10
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=1240,440
+Rot=7
+
+[Wire]
+Pxs=1240,344,1328,344
+
+[Wire]
+Pxs=1328,344,1328,360
+
+[Wire]
+Pxs=1024,344,1072,344
+
+[Wire]
+Pxs=1024,344,1024,416
+
+[Wire]
+Pxs=1072,344,1072,608
+
+[Wire]
+Pxs=1072,344,1144,344
+
+[Wire]
+Pxs=744,488,1024,488
+
+[Wire]
+Pxs=1024,464,1024,488
+
+[Wire]
+Pxs=760,176,1024,176
+
+[Wire]
+Pxs=1024,176,1024,224
+
+[Wire]
+Pxs=480,352,864,352
+
+[Comp]
+Name=Capacitor
+Px=632,680
+Rot=6
+
+[Attr]
+ON=-33,12,PART
+V=C5
+Style=8192
+
+[Attr]
+ON=-32,26,CAPACITANCE
+V=3.3n
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=528,608,528,680
+
+[Wire]
+Pxs=528,680,584,680
+
+[Wire]
+Pxs=672,608,672,680
+
+[Wire]
+Pxs=672,608,1072,608
+
+[Comp]
+Name=Resistor
+Px=624,608
+Rot=2
+
+[Attr]
+ON=-39,-39,PART
+V=R3
+Style=8192
+
+[Attr]
+ON=-39,-25,RESISTANCE
+V=2400
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=624,608,672,608
+
+[Wire]
+Pxs=1192,344,1240,344
+
+[Wire]
+Pxs=528,608,576,608
+
+[Wire]
+Pxs=632,680,672,680
+
+[Comp]
+Name=Capacitor
+Px=256,224
+Rot=3
+
+[Attr]
+ON=16,-37,PART
+V=C8
+Style=8192
+
+[Attr]
+ON=9,-23,CAPACITANCE
+V=10p
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Capacitor
+Px=320,536
+Rot=3
+
+[Attr]
+ON=19,-40,PART
+V=C9
+Style=8192
+
+[Attr]
+ON=11,-23,CAPACITANCE
+V=100p
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Capacitor
+Px=200,224
+Rot=3
+
+[Attr]
+ON=19,-40,PART
+V=C10
+Style=8192
+
+[Attr]
+ON=11,-23,CAPACITANCE
+V=1p
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=256,176,320,176
+
+[Wire]
+Pxs=200,176,256,176
+
+[Comp]
+Name=Ground
+Px=200,224
+Rot=7
+
+[Comp]
+Name=Ground
+Px=256,224
+Rot=7
+
+[Wire]
+Pxs=320,176,400,176
+
+[Comp]
+Name=Ground
+Px=320,224
+Rot=7
+
+[Comp]
+Name=Capacitor
+Px=256,536
+Rot=3
+
+[Attr]
+ON=16,-37,PART
+V=C11
+Style=8192
+
+[Attr]
+ON=9,-23,CAPACITANCE
+V=10p
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Capacitor
+Px=200,536
+Rot=3
+
+[Attr]
+ON=19,-40,PART
+V=C12
+Style=8192
+
+[Attr]
+ON=11,-23,CAPACITANCE
+V=1p
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=256,488,320,488
+
+[Wire]
+Pxs=200,488,256,488
+
+[Comp]
+Name=Ground
+Px=200,536
+Rot=7
+
+[Comp]
+Name=Ground
+Px=256,536
+Rot=7
+
+[Comp]
+Name=Ground
+Px=320,536
+Rot=7
+
+[Wire]
+Pxs=320,488,440,488
+
+[Wire]
+Pxs=296,328,320,328
+
+[Wire]
+Pxs=128,488,176,488
+
+[Wire]
+Pxs=128,488,128,496
+
+[Comp]
+Name=Ground
+Px=144,224
+Rot=7
+
+[Wire]
+Pxs=144,176,200,176
+
+[Wire]
+Pxs=672,272,712,272
+
+[Wire]
+Pxs=672,272,672,368
+
+[Wire]
+Pxs=1024,224,1024,232
+
+[Wire]
+Pxs=176,488,200,488
+
+[Wire]
+Pxs=400,176,440,176
+
+[Grid Text]
+Text="CR-FILTER "
+Text="in order to kill dc signal "
+Text="at the input "
+Text="(we only want AC signal)"
+Px=240,384
+Height=-10
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VC"
+Px=440,320
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VE"
+Px=440,384
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Vin"
+Px=296,328
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Vout"
+Px=1328,344
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="CURRENT MIRROR "
+Text="in order to have a "
+Text="stable bias current"
+Px=560,328
+Height=-10
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VBE multiplier"
+Text="class AB needs bias "
+Text="in order to not have "
+Text="crossover distortion"
+Text="R6 could be variable"
+Px=760,336
+Height=-10
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="PUSH PULL "
+Text="output stage "
+Text="in order to have power gain"
+Text="AB class is the natural choice"
+Px=1024,304
+Height=-10
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="OUTPUT FILTER"
+Text="In order to have signal in "
+Text="range of 20-20kHz"
+Px=1112,432
+Height=-10
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="V_unf"
+Px=1072,344
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Output Expression =I(Vout , gnd)"
+Text="Input Source Name =VG"
+BannerTF=True
+Px=16,101
+Height=-15
+Color=#800000
+Font=Arial
+GridSnap=False
+JustifyH=Left
+JustifyV=Bottom
+CFill=#C0C0C0
+CBorder=#000000
+
+[Grid Text]
+Text="-VCC"
+Px=176,488
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VCC"
+Px=400,176
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Schematic]
+CurrentSection 0=0
+CurrentSection 1=0
+CurrentSection 2=0
+CurrentSection 3=0
+Splitter.xs=0
+Splitter.ys=0
+TextQuad=4099
+Scale=0.66666666666666663
+GridType=Normal
+GridUser=10
+ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
+CalcRMS=False
+CalcAVG=False
+CalcPeak=False
+CalcVoltage=True
+DisplayMeasure=Last
+ShareScales=True
+
+[Tools]
+Pos=Top
+FILESAVEASOLD=No
+BOM=No
+FILEPCB=No
+PROBE=Yes
+SELECT=Yes
+PAN=Yes
+COMP=Yes
+TEXT=Yes
+WIRE=Yes
+WIRED=Yes
+BUS=Yes
+GRAPHIC=Yes
+FLOWCHART=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=No
+PARALLELOGRAM=No
+FC_PROCESS=No
+FC_ALT_PROCESS=No
+FC_DECISION=No
+FC_DATA=No
+FC_PREDEFPROCESS=No
+FC_INTERNALSTORAGE=No
+FC_DOCUMENT=No
+FC_MULTIDOCUMENT=No
+FC_TERMINATOR=No
+FC_PREPARATION=No
+FC_MANUALINPUT=No
+FC_MANUALOPERATION=No
+FC_CONNECTOR=No
+FC_OFFPAGECONNECTOR=No
+FC_PUNCHCARD=No
+FC_PUNCHEDTAPE=No
+FC_SUMMING_JUNCTION=No
+FC_OR=No
+FC_COLLATE=No
+FC_SORT=No
+FC_EXTRACT=No
+FC_MERGE=No
+FC_STORED_DATA=No
+FC_DELAY=No
+FC_SAS=No
+FC_MAGNETIC_DISK=No
+FC_DAS=No
+FC_DISPLAY=No
+SPREAD_SHEET=Yes
+POLYCLOS=No
+POLYOPEN=No
+FLAG=Yes
+INFO=Yes
+HELP=Yes
+HELP_SPICE=No
+LINK=Yes
+CHECK=Yes
+REGION_ENABLE=Yes
+TITLE_BLOCK=Yes
+DIGTRC=No
+DIGTRC2=No
+BUILD_COMMAND=Yes
+DIGALL=No
+GRIDTEXT=Yes
+COMPTEXT=Yes
+NODE=Yes
+MEASURED=Yes
+NODEV=Yes
+CURRENT=Yes
+POWER=Yes
+CONDITIN=Yes
+PIN=Yes
+CONNWARN=Yes
+CROSS=No
+GRID=Yes
+BORDER=Yes
+BORDERONE=Yes
+TITLE=Yes
+RUBBER=Yes
+PROPERTY=Yes
+STEP=Yes
+MIRROR=Yes
+ROTATE=Yes
+FLIPY=Yes
+FLIPX=Yes
+CIR_MAKEMACRO=No
+CLEARCUTWIRE=No
+CLIPBOARDCIRPAGE2BMM=No
+FINDCOMP=Yes
+FIND=Yes
+REPEAT=No
+REPLACE=No
+MODEL=Yes
+CIR2CKT=No
+ATTDISP=No
+ENABLE=Yes
+DISABLE=Yes
+ENABLE_WITH=Yes
+TOFRONT=Yes
+TOBACK=Yes
+SELNEXT=No
+PAGEADD=No
+PAGEADDTEXT=No
+ADDSECTION=No
+PAGEDEL=No
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALECIR=Yes
+GOTOFLAG=No
+UPLEVEL=Yes
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+DM_LAST=No
+DM_RMS=No
+DM_AVG=No
+DM_PEAK=No
+GRID_NONE=No
+GRID_NORMAL=No
+GRID_BOLD_5=No
+GRID_BOLD_6=No
+GRID_BOLD_USER=No
+GRAPH_PAPER=No
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+RENAMEDEFINE=No
+RENAMECMP=No
+ATTALIGN=No
+RESETNODEPOS=No
+FIT2STANDARD=No
+NODESNAP=No
+MOVETEXT=No
+TEXTINC=No
+TOGGLETEXT=No
+TOGGLEMODE=No
+TOLERANCE=No
+ALIGNAB=No
+ALIGNLEFT=No
+ALIGNCENTER=No
+ALIGNRIGHT=No
+ALIGNTOP=No
+ALIGNMIDDLES=No
+ALIGNBOTTOM=No
+
+[Section]
+Index=0
+Name="audio_amp_new"
+Type=Main
+Enable=True
+CurrentPage 0=0
+CurrentPage 1=0
+CurrentPage 2=0
+CurrentPage 3=0
+TabSize 0=425
+TabSize 1=425
+TabSize 2=425
+TabSize 3=425
+
+[Page]
+Index=0
+Section=0
+Print=True
+Enable=True
+Name=Main
+PrinterScale=1
+Scale 0=1
+Scale 1=1
+Scale 2=1
+SB 3=109,156
+Scale 3=0.66666666666666663
+Px=851,552
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Grid Text Color=Height=-12,FStyle=0,Color=#0000FF,Name=Verdana
+Grid Text RTF=False
+Grid Text Angle=0
+Grid Text GridSnap=True
+Grid Text PinIt=False
+Grid Text JustifyH=Left
+Grid Text JustifyV=Bottom
+Grid GradientColor2=None
+Grid OutlineThickness=1
+Grid OutlineColor=None
+Component Color=#0000FF
+Attribute Text=Height=-12,FStyle=0,Color=#008000,Name=Verdana
+Wire Color=#008000
+Bus Color=#008000
+Pin Connection=Height=-10,FStyle=0,Color=#FF0000,Name=Arial
+Pin Marker Color=#008000
+Node Number=Height=-11,FStyle=0,Color=#FF00FF,Name=Arial
+Node Voltage Color=Height=-11,FStyle=0,Color=#000000,Name=Arial
+Dynamic AC Voltage Color=#E4E4E4
+Text Banner Text=Height=-15,FStyle=0,Color=#800000,Name=Arial
+Title Block Background=#C0C0C0
+Current=Height=-11,FStyle=0,Color=#0000FF,Name=Arial
+Power/Condition=Height=-11,FStyle=0,Color=#FF0000,Name=Arial
+Digital Path Color=#FF0000
+Title Block Border=#000000
+Disabled	Color=#C0C0C0
+Search Color=#FFFF00
+Grid Color=#000000
+Graph Paper=#E4E4E4
+Digital 0 Color=#000000
+Digital R Color=#FFFF00
+Digital F Color=#FFFF00
+Digital 1 Color=#FF0000
+Digital X Color=#C0C0C0
+Digital Z Color=#808080
+Block Select Color=#51F998
+
+[Page]
+Index=1
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Text
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Page]
+Index=2
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Models
+SB 0=41,61
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Page]
+Index=3
+Section=0
+Type=Info
+Print=False
+Enable=True
+Name=Info
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Text Area]
+Section=0
+Page=1
+
+[Text Area]
+Section=0
+Page=2
+Text=* Schematic File
+Text=*
+Text=* Syntax:
+Text=* .MODEL <model name> [AKO:<reference model name>] <ModelType>
+Text=* +([<parameter name>=<value>][LOT[/#][/GAUSS|/UNIFORM|/WCASE]=[<tol>[%]] |[-<low>%,<high>%]][DEV[/#][/GAUSS|/UNIFORM|/WCASE]=[<tol>[%]]...)
+Text=* ModelType must be one of OPA,D,NPN,NMOS,NJF,PUL,SIN,TRN,CORE,GASFET,VSWITCH,ISWITCH,CAP,IND,RES,PNP,PMOS,PJF,DOUTPUT,DINPUT,UADC,UDAC,UGATE,UTGATE,UEFF,UGFF,UDLY,UPLD,UROM,URAM,UBGT,UIO,LPNP,NIGBT,I,V
+Text=*
+Text=*Examples:
+Text=* .MODEL 2N2222A NPN(BF=150 IS=1E-14)
+Text=* .model M1 NMOS(KP=2.5E-5 VTO=1.345 CGDO=14.67p CGBO=4.566p)
+Text=* .MODEL DK D(IS=1E-18)
+Text=* .model 2N2222A AKO:2N2222 NPN (BF=55 ISE=10F)
+Text=* .Model BJT1 NPN (RE=12 LOT/1/GAUSS=30% DEV/2/UNIFORM=2%)
+Text=*
+Text=* A .cir file is typically found in the data directory
+Text=*
+Text=.MODEL BC108 NPN ()
+Text=*** From file C:\MC12\library\UTILITY.LBR
+Text=*** 1MHz Sinusoidal Source
+Text=.MODEL 1MHZ SIN (F=1k)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\EUROPE.LBR
+Text=*** NPN AF transistor
+Text=.MODEL BC108B NPN (BF=242.854111 BR=161.449686m CJC=6.117149p CJE=11.82627p
+Text=+ IKF=10K IKR=21.026285 IS=10.00035f ISC=6.657168f ISE=1.009243p ITF=9.95368m
+Text=+ MJC=361.358643m MJE=673.545063m NE=1.809951 NF=912.846446m RE=2
+Text=+ TF=395.633026p TR=10n VAF=62.366673 VJC=949.695349m VJE=1 VTF=10
+Text=+ XTF=500.000119m)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\EUROPE.LBR
+Text=*** NPN AF transistor
+Text=.MODEL BC108A NPN (BF=201.511795 BR=165.146813m CJC=6.117149p CJE=11.82627p
+Text=+ IKF=10K IKR=84.490936 IS=10.00035f ISC=4.707919f ISE=1.02365p ITF=9.95368m
+Text=+ MJC=361.358643m MJE=673.545063m NE=1.665544 NF=912.846446m RE=2
+Text=+ TF=395.633026p TR=10n VAF=106.811111 VJC=949.695349m VJE=1 VTF=10
+Text=+ XTF=500.000119m)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\EUROPE.LBR
+Text=*** PNP A.F. transistor
+Text=.MODEL BC178 PNP (BF=150.615845 BR=367.704123m CJC=18.321927p CJE=2p
+Text=+ IKF=99.625573m IKR=991.888428 IS=10.09756f ISC=9.812018p ISE=1.000897p
+Text=+ ITF=9.961239m MJC=558.067322m MJE=500m NE=1.75351 NF=965.459347m RC=3.668005m
+Text=+ RE=1.027811 TF=873.294159p TR=10n VAF=55.700001 VJC=699.999988m VTF=10
+Text=+ XTF=499.995947m)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\EUROPE.LBR
+Text=*** PNP A.F. transistor
+Text=.MODEL BC178A PNP (BF=182.405823 BR=343.535066m CJC=18.321927p CJE=2p
+Text=+ IKF=145.980835m IKR=11.259577m IS=10.09756f ISC=69.737246f ISE=1.000336p
+Text=+ ITF=9.961239m MJC=558.067322m MJE=500m NE=1.8193 NF=965.459347m RC=41.838087m
+Text=+ RE=1.027811 TF=873.294159p TR=10n VAF=45.700001 VJC=699.999988m VTF=10
+Text=+ XTF=499.995947m)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_BJT.LIB
+Text=.MODEL TIP31 NPN (BF=3656.16 BR=0.1 CJC=3.07593E-10 CJE=3.26475E-10 EG=1.05
+Text=+ FC=0.796407 IKF=0.0333653 IKR=0.333653 IRB=100 IS=1E-09 ISC=1E-08 ISE=1E-08
+Text=+ ITF=0.001 MJC=0.476498 MJE=0.464221 MJS=0.5 NC=1.75728 NE=2.29374 NF=1.23899
+Text=+ NR=1.5 RB=6.15083 RBM=0.00113049 RC=0.0491489 RE=0.0001 TF=2.06218E-09
+Text=+ TR=9.57121E-06 VAF=10 VAR=100 VJC=0.775484 VJE=0.446174 VJS=0.75 VTF=25.7317
+Text=+ XCJC=0.750493 XTB=50 XTF=15.0842 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_BJT.LIB
+Text=.MODEL TIP31A NPN (BF=3656.16 BR=0.1 CJC=3.07593E-10 CJE=3.26475E-10 EG=1.05
+Text=+ FC=0.796407 IKF=0.0333653 IKR=0.333653 IRB=100 IS=1E-09 ISC=1E-08 ISE=1E-08
+Text=+ ITF=0.001 MJC=0.476498 MJE=0.464221 MJS=0.5 NC=1.75728 NE=2.29374 NF=1.23899
+Text=+ NR=1.5 RB=6.15083 RBM=0.00113049 RC=0.0491489 RE=0.0001 TF=2.06218E-09
+Text=+ TR=9.57121E-06 VAF=10 VAR=100 VJC=0.775484 VJE=0.446174 VJS=0.75 VTF=25.7317
+Text=+ XCJC=0.750493 XTB=50 XTF=15.0842 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_BJT.LIB
+Text=.MODEL TIP31B NPN (BF=3656.16 BR=0.1 CJC=3.07593E-10 CJE=3.26475E-10 EG=1.05
+Text=+ FC=0.796407 IKF=0.0333653 IKR=0.333653 IRB=100 IS=1E-09 ISC=1E-08 ISE=1E-08
+Text=+ ITF=0.001 MJC=0.476498 MJE=0.464221 MJS=0.5 NC=1.75728 NE=2.29374 NF=1.23899
+Text=+ NR=1.5 RB=6.15083 RBM=0.00113049 RC=0.0491489 RE=0.0001 TF=2.06218E-09
+Text=+ TR=9.57121E-06 VAF=10 VAR=100 VJC=0.775484 VJE=0.446174 VJS=0.75 VTF=25.7317
+Text=+ XCJC=0.750493 XTB=50 XTF=15.0842 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MPBJT.LIB
+Text=.MODEL 2N3447 NPN (BF=1.999998974092K BR=74.013786216872M CJC=5P CJE=2P
+Text=+ IKF=1.151836985964 IKR=999.506162092369M IS=10.004802437488F
+Text=+ ISC=85.234542555396P ISE=9.588654009907P ITF=10M MJC=500M MJE=500M
+Text=+ NC=2.000000001182 NE=1.584666767103 NF=1.003090013008 RC=96.839240264944M
+Text=+ RE=24.384831293035M TF=1N TR=10N VAF=100 VTF=10 XTF=500M)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MPBJT.LIB
+Text=.MODEL 2N3714 NPN (BF=1.154150354008K BR=12.741486934058M CJC=5P CJE=2P
+Text=+ IKF=182.929M IKR=1.423418800098 IS=10.485938419858F ISC=99.7599P
+Text=+ ISE=88.595709467355P ITF=31.038572366492U MJC=500M MJE=500M NC=2.000000005523
+Text=+ NE=1.414946243752 NF=772.729425134652M RE=101.066075058161M TF=1N
+Text=+ TR=152.22874342792U VAF=100 VTF=9.860198265661 XTF=31.993681162801)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\CS.LIB
+Text=.MODEL 2N5682 NPN (BF=1.4985E3 BR=.53399 CJC=77.383E-12 CJE=201.39E-12
+Text=+ IKF=.24376 IKR=1.6746 IS=1.7348E-12 ISC=18.289E-12 ISE=1.2653E-9 ITF=3.1892
+Text=+ MJC=.51407 MJE=.54552 NC=2.0705 NE=2 NK=.64856 RB=3.7708 RC=59.195E-3
+Text=+ TF=2.9554E-9 TR=10.000E-9 VAF=100 VAR=100 VJC=.91965 VJE=1.4778 VTF=10.241
+Text=+ XTF=9.9803)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MPBJT.LIB
+Text=.MODEL 2N6122 NPN (BF=1.034318036098K BR=14.000928307674M CJC=318.974239122277P
+Text=+ CJE=301.980248206618P IKF=101.095M IKR=999.216136950963 IS=41.305704363837F
+Text=+ ISC=99.9996P ISE=8.375927125465F ITF=29.90803695059M MJC=479.947441530096M
+Text=+ MJE=615.749332469205M NC=2.000000006699 NE=1.087782486438
+Text=+ NF=831.208074348139M RE=171.283289048091M TF=50.46742906589N
+Text=+ TR=106.698616693082U VAF=100 VJC=733.611907862389M VJE=902.274223699471M
+Text=+ VTF=10.00000113822 XTF=500.005996513514M)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MPBJT.LIB
+Text=.MODEL 2N6274 NPN (BF=1.619853246753K BR=1.423480454143M CJC=1.80808576557N
+Text=+ CJE=5.76348362962N IKF=1.35886 IKR=999.672680263645 IS=10.845033744992F
+Text=+ ISC=99.3919P ISE=99.846927674005P ITF=42.228544245107M MJC=544.45382891613M
+Text=+ MJE=398.280952789407M NC=2.000000007881 NE=1.434693227076
+Text=+ NF=787.647113239257M RE=40.855275270147M TF=4.036768283704N
+Text=+ TR=2.029939695538M VAF=100 VJC=732.934562922126M VJE=700.000000032953M
+Text=+ VTF=10.000000535845 XTF=499.994175514871M)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ROHM_TRANSISTOR.LIB
+Text=.MODEL 2SD2114K NPN (BF=1.0520E3 BR=52.730 CJC=22.112E-12 CJE=51.912E-12
+Text=+ IKF=3.2468 IKR=.37406 IS=1.5000E-12 ISC=1.7779E-12 ISE=1.5000E-12 ITF=5.0910
+Text=+ MJC=.38184 MJE=.39966 NC=2.1499 NE=2.3002 NK=.96651 RB=2.7608 RC=.17064 RE=.1
+Text=+ TF=384.39E-12 TR=6.2144E-9 VAF=36.700 VAR=100 VTF=33.125 XTB=1.5000
+Text=+ XTF=23.667)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QTIP31C NPN (BF=2530.91 BR=0.1 CJC=3.07593E-10 CJE=3.26476E-10 EG=1.05
+Text=+ FC=0.796407 IKF=0.0647102 IKR=0.647102 IRB=6.81966 IS=1E-09 ISC=1.00058E-09
+Text=+ ISE=1.00058E-09 ITF=0.001 MJC=0.476498 MJE=0.464223 MJS=0.5 NC=1.45279
+Text=+ NE=1.836 NF=1.26029 NR=1.5 RB=6.98719 RBM=0.001 RC=0.0636828 RE=0.0001
+Text=+ TF=2.062E-09 TR=1E-07 VAF=10 VAR=100 VJC=0.775484 VJE=0.446174 VJS=0.75
+Text=+ VTF=25.7317 XCJC=0.750493 XTB=15.7688 XTF=15.0842 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\FAIRCH.LIB
+Text=.MODEL TN6714A NPN (BF=18.52K BR=1.271 CJC=22.48P CJE=77.63P FC=.5 IKF=85.68M
+Text=+ IS=62.33F ISE=62.33F MJC=.4937 MJE=.3822 NE=1.265 RB=10 RC=.5 TF=1.492N
+Text=+ TR=6.16N VAF=100 VJC=.75 VJE=.75 XTB=1.5)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\FAIRCH.LIB
+Text=.MODEL TIS98 NPN (BF=9.599K BR=6.935 CJC=8.866P CJE=10.49P FC=.5 IKF=.1434
+Text=+ IS=4.872F ISE=14.65F ITF=.18 MJC=.4312 MJE=.4602 NE=1.315 RB=10 RC=.7
+Text=+ TF=405.1P TR=565P VAF=100 VJC=.75 VJE=.75 VTF=3 XTB=1.5 XTF=2.5)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZXTN07045EFF NPN (BF=1160 BR=123 CJC=59E-12 CJE=250E-12 GAMMA=5E-9 IKF=4
+Text=+ IKR=1 IS=1.5E-12 ISC=4E-13 ISE=4E-13 MJC=0.36 MJE=0.36 NC=1.34 NE=1.37
+Text=+ QUASIMOD=1 RB=0.1 RC=0.015 RCO=0.75 RE=0.022 TF=0.6E-9 TR=9E-9 TRB1=0.004
+Text=+ TRC1=0.004 TRE1=0.004 VAF=60 VAR=14.5 VJC=0.49 VJE=0.68 XTB=1.4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZXTN07012EFF NPN (BF=1100 BR=470 CJC=106E-12 CJE=285E-12 GAMMA=10E-10
+Text=+ IKF=5 IKR=1 IS=1.7E-12 ISC=1.2E-12 ISE=3E-13 MJC=0.33 MJE=0.41 NC=1.5 NE=1.43
+Text=+ QUASIMOD=1 RB=0.1 RC=0.0097 RCO=0.2 RE=0.03 TF=0.4E-9 TR=1.3E-9 TRB1=0.003
+Text=+ TRC1=0.003 TRE1=0.003 VAF=25 VAR=6.5 VJC=0.55 VJE=0.80 XTB=1.4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\FAIRCH.LIB
+Text=.MODEL TN6715A NPN (BF=18.52K BR=1.271 CJC=22.48P CJE=77.63P FC=.5 IKF=85.68M
+Text=+ IS=62.33F ISE=62.33F MJC=.4937 MJE=.3822 NE=1.265 RB=10 RC=.5 TF=1.492N
+Text=+ TR=6.16N VAF=100 VJC=.75 VJE=.75 XTB=1.5)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QTIP31B NPN (BF=3656.16 BR=0.1 CJC=3.07593E-10 CJE=3.26475E-10 EG=1.05
+Text=+ FC=0.796407 IKF=0.0333653 IKR=0.333653 IRB=100 IS=1E-09 ISC=1E-08 ISE=1E-08
+Text=+ ITF=0.001 MJC=0.476498 MJE=0.464221 MJS=0.5 NC=1.75728 NE=2.29374 NF=1.23899
+Text=+ NR=1.5 RB=6.15083 RBM=0.00113049 RC=0.0491489 RE=0.0001 TF=2.06218E-09
+Text=+ TR=9.57121E-06 VAF=10 VAR=100 VJC=0.775484 VJE=0.446174 VJS=0.75 VTF=25.7317
+Text=+ XCJC=0.750493 XTB=50 XTF=15.0842 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QTIP31A NPN (BF=3656.16 BR=0.1 CJC=3.07593E-10 CJE=3.26475E-10 EG=1.05
+Text=+ FC=0.796407 IKF=0.0333653 IKR=0.333653 IRB=100 IS=1E-09 ISC=1E-08 ISE=1E-08
+Text=+ ITF=0.001 MJC=0.476498 MJE=0.464221 MJS=0.5 NC=1.75728 NE=2.29374 NF=1.23899
+Text=+ NR=1.5 RB=6.15083 RBM=0.00113049 RC=0.0491489 RE=0.0001 TF=2.06218E-09
+Text=+ TR=9.57121E-06 VAF=10 VAR=100 VJC=0.775484 VJE=0.446174 VJS=0.75 VTF=25.7317
+Text=+ XCJC=0.750493 XTB=50 XTF=15.0842 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QTIP31 NPN (BF=3656.16 BR=0.1 CJC=3.07593E-10 CJE=3.26475E-10 EG=1.05
+Text=+ FC=0.796407 IKF=0.0333653 IKR=0.333653 IRB=100 IS=1E-09 ISC=1E-08 ISE=1E-08
+Text=+ ITF=0.001 MJC=0.476498 MJE=0.464221 MJS=0.5 NC=1.75728 NE=2.29374 NF=1.23899
+Text=+ NR=1.5 RB=6.15083 RBM=0.00113049 RC=0.0491489 RE=0.0001 TF=2.06218E-09
+Text=+ TR=9.57121E-06 VAF=10 VAR=100 VJC=0.775484 VJE=0.446174 VJS=0.75 VTF=25.7317
+Text=+ XCJC=0.750493 XTB=50 XTF=15.0842 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QPZT2222AT1 NPN (BF=1256.22 BR=38.0369 CJC=1.24128E-11 CJE=2.53476E-11
+Text=+ EG=1.206 FC=0.53103 IKF=0.327148 IKR=0.0630953 IRB=4.19636 IS=3.17132E-13
+Text=+ ISC=1.00431E-16 ISE=7.42524E-12 ITF=0.322863 MJC=0.266348 MJE=0.301384
+Text=+ MJS=0.5 NC=4 NE=1.73924 NF=1.02244 NR=1.01607 RB=1.96428 RBM=0.0103279
+Text=+ RC=0.180572 RE=1E-05 TF=3.86575E-10 TR=2.55854E-10 VAF=84.3948 VAR=0.995915
+Text=+ VJC=0.142948 VJE=0.415008 VJS=0.75 VTF=36.1583 XCJC=0.899999 XTB=3.42142
+Text=+ XTF=1.81864 XTI=0.0102863)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNST3904F3T5G NPN (BF=9999.99 BR=3.01655 CJC=7.2527E-12 CJE=7.03074E-12
+Text=+ EG=1.05 FC=0.478249 IKF=0.497185 IKR=4.9723 IRB=0.1 IS=6.62004E-15
+Text=+ ISC=1.00001E-16 ISE=1E-16 ITF=0.0116242 MJC=0.307125 MJE=0.230301 MJS=0.5
+Text=+ NC=4 NE=1.08909 NF=0.995484 NR=1.00748 RB=4.80839 RBM=0.480839 RC=0.419665
+Text=+ RE=0.0835736 TF=4.83784E-10 TR=1.29513E-07 VAF=685.968 VAR=1.05699
+Text=+ VJC=0.729005 VJE=0.4 VJS=0.75 VTF=9.78753 XCJC=0.9 XTB=0.1 XTF=0.977083 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS40601CF8T1G NPN (BF=1928.74 BR=1.50633 CJC=2.15217E-10
+Text=+ CJE=1.04432E-09 EG=1.206 FC=0.8 IKF=2.87858 IKR=6.61844 IRB=0.100155
+Text=+ IS=2.3589E-13 ISC=5.47012E-16 ISE=4.57663E-15 ITF=0.226817 MJC=0.437195
+Text=+ MJE=0.279439 MJS=0.5 NC=3.99986 NE=1 NF=0.901194 NR=0.979479 RB=3.65189
+Text=+ RBM=0.1 RC=0.0171191 RE=0.00342382 TF=5.13519E-12 TR=1.13333E-06 VAF=245.282
+Text=+ VAR=999.989 VJC=0.4 VJE=0.4 VJS=0.75 VTF=2190.85 XTB=4.71402 XTF=78.7251
+Text=+ XTI=3.87865)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS12201LT1G NPN (BF=3687.45 BR=82.3453 CJC=8.87769E-11 CJE=4.63111E-10
+Text=+ EG=1.12045 FC=0.8 IKF=2.85441 IKR=9.86617 IRB=0.128933 IS=7.36488E-13
+Text=+ ISC=7.26631E-15 ISE=7.26606E-15 ITF=0.303209 MJC=0.23 MJE=0.346876 MJS=0.5
+Text=+ NC=3.99425 NE=1.09639 NF=1.03702 NR=1.04021 RB=1.35062 RBM=0.10168
+Text=+ RC=0.027346 RE=0.000217454 TF=1E-12 TR=5.96465E-09 VAF=25.4811 VAR=213.003
+Text=+ VJC=0.439078 VJE=0.4 VJS=0.75 VTF=100000 XTB=0.1 XTF=473.563 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT6429LT1 NPN (BF=6084.63 BR=608.463 CJC=4.4457E-12 CJE=8.08142E-12
+Text=+ EG=1.206 FC=0.725464 IKF=0.193795 IKR=0.031621 IRB=0.322674 IS=1.74559E-13
+Text=+ ISC=1E-18 ISE=6.34199E-14 ITF=10.4957 KF=2E-15 MJC=0.345663 MJE=0.346138
+Text=+ MJS=0.5 NC=1.44458 NE=1.47005 NF=1.03273 NR=1.00262 RB=0.17795 RBM=0.17795
+Text=+ RC=0.918576 RE=0.183715 TF=2.76368E-10 TR=1E-07 VAF=967.955 VAR=1000
+Text=+ VJC=0.741953 VJE=0.409905 VJS=0.75 VTF=819.758 XCJC=0.804314 XTB=0.478471
+Text=+ XTF=9002.67 XTI=3.51897)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_BJT.LIB
+Text=.MODEL TIP32 PNP (BF=134.366 BR=0.1 CJC=3.07595E-10 CJE=3.26474E-10 EG=1.05
+Text=+ FC=0.8 IKF=0.742988 IKR=3.21978 IRB=2.41268 IS=1E-09 ISC=1E-16 ISE=1E-16
+Text=+ ITF=0.0305862 MJC=0.476497 MJE=0.464223 MJS=0.5 NC=2.71657 NE=1.40014
+Text=+ NF=1.29961 NR=1.46599 RB=7.44433 RBM=0.218936 RC=0.0761421 RE=0.0152284
+Text=+ TF=1E-08 TR=9.57121E-06 VAF=10 VAR=100 VJC=0.77548 VJE=0.446178 VJS=0.75
+Text=+ VTF=8.2848 XCJC=0.799334 XTB=0.1 XTF=3.50642 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT589LT1 PNP (BF=189.963 BR=4.55276 CJC=2.28715E-11 CJE=7.83311E-12
+Text=+ EG=1.20601 FC=0.500968 IKF=2.00915 IKR=8.59275 IRB=0.1 IS=2.98999E-14
+Text=+ ISC=3.90005E-13 ISE=6.40452E-12 ITF=0.00995909 MJC=0.23 MJE=0.352563 MJS=0.5
+Text=+ NC=3.99 NE=3.39975 NF=0.900639 NR=0.92047 RB=9.45087 RBM=0.0999994
+Text=+ RC=0.253074 RE=0.00101794 TF=2.97697E-10 TR=1E-07 VAF=25.5754 VAR=4.44253
+Text=+ VJC=0.947981 VJE=0.652059 VJS=0.75 VTF=10.4621 XCJC=0.896875 XTB=0.141011
+Text=+ XTF=1.00545 XTI=1.05355)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT2907ALT1 PNP (BF=244.282 BR=0.0710857 CJC=1.95005E-11
+Text=+ CJE=2.56004E-11 EG=1.05 FC=0.99 IKF=0.0626769 IKR=0.626769 IRB=0.77742
+Text=+ IS=9.07168E-14 ISC=1E-18 ISE=1.15373E-13 ITF=0.320002 MJC=0.391358
+Text=+ MJE=0.408234 MJS=0.5 NC=3.81245 NE=1.39168 NF=1.0581 NR=1.24176 RB=0.1
+Text=+ RBM=0.1 RC=0.482396 RE=1E-09 TF=3.9906E-10 TR=1.05911E-10 VAF=10 VAR=100
+Text=+ VJC=0.4 VJE=0.99 VJS=0.75 VTF=57.8683 XCJC=0.899999 XTB=0.44453 XTF=11.1076
+Text=+ XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT2907AM3T5G PNP (BF=106.149 BR=10.6149 CJC=1.80024E-11
+Text=+ CJE=2.57036E-11 EG=1.05 FC=0.189247 IKF=3.54353 IKR=10 IRB=0.1 IS=4.81076E-13
+Text=+ ISC=1.76596E-14 ISE=2.44614E-09 ITF=1.4426 MJC=0.375164 MJE=0.355207 MJS=0.5
+Text=+ NC=1 NE=4 NF=1.11787 NR=1.5 RB=0.1 RBM=0.1 RC=0.001 RE=0.0001 TF=4.36228E-10
+Text=+ TR=9.57121E-06 VAF=32.0891 VAR=320.891 VJC=0.53261 VJE=0.740743 VJS=0.75
+Text=+ VTF=389.707 XCJC=0.9 XTB=1.37884 XTF=116.906 XTI=4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT2907AWT1G PNP (BF=273.392 BR=1.06467 CJC=1.22551E-11 CJE=3.4971E-11
+Text=+ EG=1.05 FC=0.8 IKF=0.157814 IKR=1.57814 IRB=0.1 IS=2.34197E-13
+Text=+ ISC=1.26638E-10 ISE=1.80156E-10 ITF=6.54389 MJC=0.356288 MJE=0.372755 MJS=0.5
+Text=+ NC=2.53366 NE=2.57789 NF=1.09043 NR=1.1117 RB=0.2 RBM=0.2 RC=0.682789
+Text=+ RE=0.136558 TF=4.74739E-10 TR=3.49243E-08 VAF=912.774 VAR=258.302 VJC=0.4
+Text=+ VJE=0.771605 VJS=0.75 VTF=100000 XCJC=0.880326 XTB=2.54113 XTF=484.548 XTI=4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT3906LT1 PNP (BF=1000 BR=100 CJC=6.27116E-12 CJE=5.90332E-12 EG=1.05
+Text=+ FC=0.499933 IKF=0.0845798 IKR=0.845798 IRB=0.1 IS=8.10417E-16 ISC=3.95828E-15
+Text=+ ISE=3.95828E-15 ITF=0.0100425 MJC=0.236039 MJE=0.233176 MJS=0.5 NC=3.99999
+Text=+ NE=1.34369 NF=0.997564 NR=0.918771 RB=0.1 RBM=0.1 RC=1.07833 RE=0.0001
+Text=+ TF=4.65245E-10 TR=4.39203E-09 VAF=10 VAR=1.28138 VJC=0.509649 VJE=0.489541
+Text=+ VJS=0.75 VTF=9.95238 XCJC=0.9 XTB=0.1 XTF=0.996431 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT3906TT1 PNP (BF=194.093 BR=3.41317 CJC=6.85007E-12 CJE=6.11928E-12
+Text=+ EG=1.05 FC=0.478887 IKF=0.0660057 IKR=1.70599 IRB=0.1 IS=7.75521E-12
+Text=+ ISC=7.64281E-10 ISE=1.88546E-12 ITF=0.0106472 MJC=0.279018 MJE=0.248812
+Text=+ MJS=0.5 NC=1.92376 NE=1.81673 NF=1.35509 NR=1.5 RB=6.48961 RBM=0.1 RC=2.45044
+Text=+ RE=0.0001 TF=5.21843E-10 TR=4.30605E-07 VAF=156.436 VAR=5.86061 VJC=0.4
+Text=+ VJE=0.4 VJS=0.75 VTF=9.1046 XCJC=0.9 XTB=0.1 XTF=0.932702 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT4403LT1 PNP (BF=654.468 BR=65.4461 CJC=1.61963E-11 CJE=3.17143E-11
+Text=+ EG=1.05 FC=0.1 IKF=0.999887 IKR=9.99887 IRB=0.0999996 IS=2.27561E-13
+Text=+ ISC=2.90757E-13 ISE=2.91474E-13 ITF=0.999998 MJC=0.368678 MJE=0.276014
+Text=+ MJS=0.5 NC=4 NE=1.46619 NF=1.0413 NR=0.985329 RB=0.100101 RBM=0.100057
+Text=+ RC=0.55887 RE=0.000100001 TF=2.4179E-10 TR=2.71021E-09 VAF=57.8473
+Text=+ VAR=1.25802 VJC=0.4 VJE=0.4 VJS=0.75 VTF=0.995669 XCJC=0.896875 XTB=0.428469
+Text=+ XTF=1.35721 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT4403M3T5G PNP (BF=279.219 BR=3.72581 CJC=1.2409E-11 CJE=3.50312E-11
+Text=+ EG=1.05 FC=0.494378 IKF=0.251002 IKR=2.51002 IRB=0.1 IS=3.34409E-12
+Text=+ ISC=1.26085E-12 ISE=1.26085E-12 ITF=0.0106167 MJC=0.341535 MJE=0.472534
+Text=+ MJS=0.5 NC=1.17885 NE=1.55869 NF=1.14961 NR=1.5 RB=6.23891 RBM=0.1
+Text=+ RC=0.294392 RE=0.0588784 TF=4.28463E-10 TR=9.57121E-06 VAF=1000 VAR=91.7629
+Text=+ VJC=0.581119 VJE=0.952475 VJS=0.75 VTF=8.87576 XCJC=0.9 XTB=0.758209
+Text=+ XTF=0.826632 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT4403WT1 PNP (BF=654.468 BR=65.4461 CJC=1.61963E-11 CJE=3.17143E-11
+Text=+ EG=1.05 FC=0.1 IKF=0.999887 IKR=9.99887 IRB=0.0999996 IS=2.27561E-13
+Text=+ ISC=2.90757E-13 ISE=2.91474E-13 ITF=0.999998 MJC=0.368678 MJE=0.276014
+Text=+ MJS=0.5 NC=4 NE=1.46619 NF=1.0413 NR=0.985329 RB=0.100101 RBM=0.100057
+Text=+ RC=0.55887 RE=0.000100001 TF=2.4179E-10 TR=2.71021E-09 VAF=57.8473
+Text=+ VAR=1.25802 VJC=0.4 VJE=0.4 VJS=0.75 VTF=0.995669 XCJC=0.896875 XTB=0.428469
+Text=+ XTF=1.35721 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT5401LT1 PNP (BF=200.269 BR=0.1 CJC=2.98265E-11 CJE=6.2128E-11
+Text=+ EG=1.05 FC=0.338113 IKF=0.0531326 IKR=0.100005 IRB=0.199964 IS=8.9173E-13
+Text=+ ISC=2.93696E-13 ISE=1.97547E-11 ITF=0.0112512 MJC=0.647107 MJE=0.419943
+Text=+ MJS=0.5 NC=3.99992 NE=1.82026 NF=1.11247 NR=1.27676 RB=0.101969 RBM=0.100205
+Text=+ RC=2.18426 RE=0.00010215 TF=3.85478E-10 TR=1.54439E-06 VAF=10 VAR=2.39816
+Text=+ VJC=0.95 VJE=0.642095 VJS=0.75 VTF=9.1687 XCJC=0.9 XTB=0.1 XTF=0.871471 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT5401WT1 PNP (BF=200.269 BR=0.1 CJC=2.98265E-11 CJE=6.2128E-11
+Text=+ EG=1.05 FC=0.338113 IKF=0.0531326 IKR=0.100005 IRB=0.199964 IS=8.9173E-13
+Text=+ ISC=2.93696E-13 ISE=1.97547E-11 ITF=0.0112512 MJC=0.647107 MJE=0.419943
+Text=+ MJS=0.5 NC=3.99992 NE=1.82026 NF=1.11247 NR=1.27676 RB=0.101969 RBM=0.100205
+Text=+ RC=2.18426 RE=0.00010215 TF=3.85478E-10 TR=1.54439E-06 VAF=10 VAR=2.39816
+Text=+ VJC=0.95 VJE=0.642095 VJS=0.75 VTF=9.1687 XCJC=0.9 XTB=0.1 XTF=0.871471 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBT6520LT1 PNP (BF=149.161 BR=0.1 CJC=1.15331E-11 CJE=5.61244E-11
+Text=+ EG=1.206 FC=0.8 IKF=0.0112641 IKR=0.0709745 IRB=49.6423 IS=2.61701E-13
+Text=+ ISC=4.77309E-10 ISE=4.77309E-10 ITF=1.0902 MJC=0.269645 MJE=0.366941 MJS=0.5
+Text=+ NC=1.80126 NE=2.3782 NF=1.11879 NR=1.5 RB=10.5001 RBM=0.1 RC=2.31482
+Text=+ RE=0.0001 TF=1.81457E-09 TR=9.57121E-06 VAF=10 VAR=5.58537 VJC=0.4
+Text=+ VJE=0.783217 VJS=0.75 VTF=100000 XTB=0.1 XTF=1000 XTI=4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBTA56LT1 PNP (BF=330.329 BR=13.5347 CJC=4.23568E-11 CJE=9.91029E-11
+Text=+ EG=1.05 FC=0.682261 IKF=0.179281 IKR=1.79281 IRB=0.1 IS=2.20608E-12
+Text=+ ISC=1.00107E-16 ISE=8.82509E-13 ITF=0.153967 MJC=0.331634 MJE=0.46254 MJS=0.5
+Text=+ NC=3.99999 NE=1.46811 NF=1.10505 NR=1.07528 RB=2.1842 RBM=0.1 RC=0.203558
+Text=+ RE=0.0407115 TF=6.00981E-10 TR=4.75567E-08 VAF=726.083 VAR=1000 VJC=0.4
+Text=+ VJE=0.99 VJS=0.75 VTF=31.3653 XCJC=0.799987 XTB=0.1 XTF=3.25348 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMBTA92LT1 PNP (BF=103.549 BR=0.1 CJC=1.03856E-11 CJE=5.2757E-11
+Text=+ EG=1.05511 FC=0.8 IKF=0.0317165 IKR=0.317131 IRB=0.1 IS=2.00284E-13
+Text=+ ISC=8.35127E-10 ISE=8.35127E-10 ITF=0.0914286 MJC=0.566584 MJE=0.295411
+Text=+ MJS=0.5 NC=2.25282 NE=4 NF=1.08116 NR=1.37499 RB=0.1 RBM=0.1 RC=7.52642
+Text=+ RE=0.0001 TF=6.55828E-10 TR=1E-07 VAF=10 VAR=1.93681 VJC=0.95 VJE=0.520002
+Text=+ VJS=0.75 VTF=374.178 XCJC=0.8 XTB=0.321309 XTF=29.3141 XTI=4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMDJ3P03BJT PNP (BF=400.212 BR=4.3446 CJC=3.44025E-10 CJE=2.47161E-09
+Text=+ EG=1.05 FC=0.853142 IKF=5.66333 IKR=4.46362 IRB=0.1 IS=3.316E-11 ISC=2.5E-13
+Text=+ ISE=7.74837E-12 ITF=9.02361 MJC=0.375416 MJE=0.425946 MJS=0.5 NC=4 NE=3.34404
+Text=+ NF=1.14819 NR=1.19617 RB=9.05473 RBM=0.1 RC=0.133658 RE=0.000664561
+Text=+ TF=5.90089E-10 TR=1E-07 VAF=26.632 VAR=2.5202 VJC=0.4 VJE=0.472448 VJS=0.75
+Text=+ VTF=15.1707 XCJC=0.800001 XTB=0.393698 XTF=15.9663 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMJT350T1 PNP (BF=94.512 BR=1.56814 CJC=1E-11 CJE=1E-11 EG=1.206 FC=0.5
+Text=+ IKF=0.0820791 IKR=0.820791 IRB=0.1 IS=1.45223E-15 ISC=4.95851E-13
+Text=+ ISE=4.95851E-13 ITF=0.01 MJC=0.33 MJE=0.33 MJS=0.5 NC=3.90626 NE=3.10496
+Text=+ NF=0.853288 NR=0.845797 RB=3.69037 RBM=0.1 RC=0.222792 RE=0.0001 TF=1E-09
+Text=+ TR=1E-07 VAF=94.0711 VAR=22.3565 VJC=0.75 VJE=0.75 VJS=0.75 VTF=10 XCJC=0.9
+Text=+ XTB=1.27056 XTF=1 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMMJT9435 PNP (BF=1221.78 BR=14.3222 CJC=3.38482E-10 CJE=1.79831E-09
+Text=+ EG=1.05 FC=0.648259 IKF=0.907919 IKR=0.258641 IRB=1.76123E-05 IS=7.44058E-12
+Text=+ ISC=1.48369E-11 ISE=1.48369E-11 ITF=6.82425 MJC=0.363672 MJE=0.85 MJS=0.5
+Text=+ NC=3.06893 NE=1.46826 NF=1.06734 NR=1.07881 RB=157.068 RBM=0.000221391
+Text=+ RC=0.116235 RE=0.0232469 TF=2.79429E-10 TR=1E-07 VAF=18.1073 VAR=67.1412
+Text=+ VJC=0.4 VJE=0.4 VJS=0.75 VTF=523.348 XCJC=1E-06 XTB=0.1 XTF=5.99131 XTI=4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMPSA56 PNP (BF=246.647 BR=0.1 CJC=4.21506E-11 CJE=4.05433E-11
+Text=+ EG=0.851752 FC=0.180025 IKF=0.332189 IKR=4.71144 IRB=0.184627 IS=9.62586E-12
+Text=+ ISC=3.90265E-13 ISE=1.74278E-11 ITF=0.441135 MJC=0.352218 MJE=0.748564
+Text=+ MJS=0.5 NC=3.98982 NE=1.95504 NF=1.19008 NR=1.49124 RB=0.772559 RBM=0.365314
+Text=+ RC=0.26419 RE=0.00202964 TF=7.64992E-10 TR=1E-07 VAF=19.1507 VAR=3.92539
+Text=+ VJC=0.4 VJE=0.4 VJS=0.75 VTF=12.6194 XCJC=0.899996 XTB=0.467199 XTF=4.80943
+Text=+ XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMPSA92 PNP (BF=103.549 BR=0.1 CJC=1.03856E-11 CJE=5.2757E-11 EG=1.05511
+Text=+ FC=0.8 IKF=0.0317165 IKR=0.317131 IRB=0.1 IS=2.00284E-13 ISC=8.35127E-10
+Text=+ ISE=8.35127E-10 ITF=0.0914286 MJC=0.566584 MJE=0.295411 MJS=0.5 NC=2.25282
+Text=+ NE=4 NF=1.08116 NR=1.37499 RB=0.1 RBM=0.1 RC=7.52642 RE=0.0001 TF=6.55828E-10
+Text=+ TR=1E-07 VAF=10 VAR=1.93681 VJC=0.95 VJE=0.520002 VJS=0.75 VTF=374.178
+Text=+ XCJC=0.8 XTB=0.321309 XTF=29.3141 XTI=4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMPSW51 PNP (BF=1934.15 BR=100 CJC=6.22302E-11 CJE=1.21747E-10 EG=1.206
+Text=+ FC=0.644686 IKF=1.20158 IKR=9.86974 IRB=0.1 IS=1.06188E-11 ISC=1.65673E-13
+Text=+ ISE=1.65673E-13 ITF=11.8194 MJC=0.414999 MJE=0.431098 MJS=0.5 NC=1.08148
+Text=+ NE=1.28175 NF=1.21127 NR=1.12939 RB=1.79271 RBM=0.1 RC=0.153492 RE=0.00927214
+Text=+ TF=7.26385E-10 TR=1E-07 VAF=10 VAR=4.46916 VJC=0.4 VJE=0.99 VJS=0.75
+Text=+ VTF=11.876 XCJC=0.881227 XTB=0.1 XTF=569.539 XTI=4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QMSB92WT1G PNP (BF=41.2708 BR=0.1 CJC=4.92911E-12 CJE=4.8257E-11
+Text=+ EG=1.206 FC=0.533556 IKF=0.0530746 IKR=0.530746 IRB=0.100221 IS=1.88104E-14
+Text=+ ISC=1E-16 ISE=4.65439E-10 ITF=1 MJC=0.438078 MJE=0.264669 MJS=0.5 NC=1.81721
+Text=+ NE=4 NF=0.965171 NR=0.998641 RB=0.1 RBM=0.1 RC=2.74582 RE=0.549164
+Text=+ TF=2.20818E-09 TR=1E-07 VAF=10 VAR=4.58831 VJC=0.604568 VJE=0.438934 VJS=0.75
+Text=+ VTF=1 XCJC=0.8 XTB=1.00104 XTF=1.5 XTI=1.13585)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNJD1718T4G PNP (BF=131.298 BR=12.1098 CJC=1.06543E-10 CJE=3.64648E-10
+Text=+ EG=1.19285 FC=0.8 IKF=0.744637 IKR=7.44637 IRB=0.1 IS=7.71505E-14
+Text=+ ISC=1.7562E-12 ISE=1.34027E-11 ITF=5.64435 MJC=0.352122 MJE=0.275647 MJS=0.5
+Text=+ NC=3.93726 NE=2.71217 NF=0.955275 NR=0.954144 RB=10.8509 RBM=0.1 RC=0.215087
+Text=+ RE=0.00189923 TF=1.5936E-09 TR=7.03801E-08 VAF=16.9909 VAR=169.909 VJC=0.4
+Text=+ VJE=0.4 VJS=0.75 VTF=0.762056 XCJC=0.684575 XTB=1.2655 XTF=6.90519
+Text=+ XTI=3.98049)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNJL1302D PNP (BF=82.1357 BR=3.74385 CJC=1E-09 CJE=1.51689E-08
+Text=+ EG=0.861487 FC=0.707596 IKF=9.06286 IKR=6.49075 IRB=0.0183457 IS=9.82035E-11
+Text=+ ISC=2.50558E-13 ISE=6.57086E-12 ITF=255.984 MJC=0.235697 MJE=0.447498 MJS=0.5
+Text=+ NC=3.99895 NE=3.31141 NF=1.38754 NR=1.6349 RB=3.68893 RBM=0.1 RC=0.093766
+Text=+ RE=0.000386841 TF=2.75424E-09 TR=1E-07 VAF=10.043 VAR=6.726 VJC=0.95
+Text=+ VJE=0.922965 VJS=0.75 VTF=3.17307 XTB=0.929578 XTF=1000 XTI=1.31423)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNJT4030P PNP (BF=372.791 BR=29.1646 CJC=1.01869E-10 CJE=3.27154E-10
+Text=+ EG=1.10086 FC=0.78261 IKF=1.70048 IKR=2.19487 IRB=0.1 IS=6.10762E-12
+Text=+ ISC=9.2457E-14 ISE=5.62041E-13 ITF=4.79652 MJC=0.304596 MJE=0.317786 MJS=0.5
+Text=+ NC=4 NE=1.62641 NF=1.11525 NR=1.12282 RB=2.14688 RBM=0.1 RC=0.0693177
+Text=+ RE=0.0138635 TF=7.25283E-10 TR=1E-07 VAF=123.792 VAR=239.503 VJC=0.4 VJE=0.4
+Text=+ VJS=0.75 VTF=100000 XCJC=0.812733 XTB=1.17404 XTF=22.4348 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNJW0302G PNP (BF=114.657 BR=1.47167 CJC=5E-10 CJE=2.14504E-09 EG=1.05
+Text=+ FC=0.8 IKF=6.409 IKR=6.34299 IRB=0.1 IS=5.16751E-16 ISC=3.96408E-15
+Text=+ ISE=3.9641E-15 ITF=501.348 MJC=0.251547 MJE=0.376227 MJS=0.5 NC=2.82194 NE=4
+Text=+ NF=0.895716 NR=0.923324 RB=2.66347 RBM=2.0828 RC=0.0652395 RE=0.0001
+Text=+ TF=2.16864E-09 TR=1E-07 VAF=50.2189 VAR=255.567 VJC=0.95 VJE=0.4 VJS=0.75
+Text=+ VTF=843.737 XTB=1.45322 XTF=1000 XTI=1.08126)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNJW1302G PNP (BF=100.173 BR=0.562437 CJC=5E-10 CJE=1.1214E-08 EG=1.05
+Text=+ FC=0.8 IKF=4.32732 IKR=0.0147402 IRB=0.1 IS=5.45163E-13 ISC=6.43606E-12
+Text=+ ISE=6.43606E-12 ITF=95.9461 MJC=0.23 MJE=0.32843 MJS=0.5 NC=1.3691 NE=1.46233
+Text=+ NF=0.981788 NR=1.095 RB=3.70218 RBM=0.163972 RC=0.0305746 RE=0.00611492
+Text=+ TF=2.35244E-09 TR=1E-07 VAF=10 VAR=100 VJC=0.95 VJE=0.663546 VJS=0.75
+Text=+ VTF=4.60515 XCJC=0.901894 XTB=1.67324 XTF=79.0726 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNJW21193G PNP (BF=83.2918 BR=0.1 CJC=5E-10 CJE=1.00619E-08 EG=1.05
+Text=+ FC=0.1 IKF=3.99366 IKR=10 IRB=0.1 IS=6.76984E-11 ISC=3.90093E-13
+Text=+ ISE=1.78864E-11 ITF=0.001 MJC=0.249866 MJE=0.44463 MJS=0.5 NC=3.98987
+Text=+ NE=1.46619 NF=0.911636 NR=1.5 RB=1.07223 RBM=1.07223 RC=0.102622 RE=0.0001
+Text=+ TF=6.67045E-09 TR=1E-07 VAF=16.0266 VAR=2.55558 VJC=0.95 VJE=0.99 VJS=0.75
+Text=+ VTF=60 XCJC=0.1 XTB=0.452183 XTF=3.371 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSB9435T1 PNP (BF=160.131 BR=16.0131 CJC=3.27357E-10 CJE=1.1927E-09
+Text=+ EG=1.05 FC=0.1 IKF=10 IKR=0.402084 IRB=0.100022 IS=5.86765E-12
+Text=+ ISC=4.75181E-13 ISE=5.59363E-12 ITF=1.06396 MJC=0.320308 MJE=0.85 MJS=0.5
+Text=+ NC=3.99988 NE=3.4256 NF=1.11814 NR=1.14478 RB=0.931165 RBM=0.1 RC=0.0482121
+Text=+ RE=0.00961565 TF=1.37474E-09 TR=1E-07 VAF=10.2044 VAR=8.34625 VJC=0.58749
+Text=+ VJE=0.672284 VJS=0.75 VTF=25.327 XCJC=0.796075 XTB=0.1 XTF=1.89339
+Text=+ XTI=2.90747)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSL12AWT1 PNP (BF=196.762 BR=19.6758 CJC=7.32933E-11 CJE=3.59913E-10
+Text=+ EG=1.20589 FC=0.520718 IKF=2.52279 IKR=10.0001 IRB=0.1 IS=6.92487E-14
+Text=+ ISC=3.43919E-16 ISE=1.1126E-10 ITF=0.0100398 MJC=0.315784 MJE=0.325395
+Text=+ MJS=0.5 NC=1 NE=3.65226 NF=0.971842 NR=0.987805 RB=3.112 RBM=0.1 RC=0.128256
+Text=+ RE=0.0256511 TF=8.52307E-10 TR=1E-07 VAF=6.5 VAR=58.7823 VJC=0.639466
+Text=+ VJE=0.663357 VJS=0.75 VTF=9.82219 XCJC=0.8 XTB=1.84225 XTF=0.939941 XTI=4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSL12TT1 PNP (BF=239.064 BR=3.28955 CJC=2.95409E-11 CJE=2.26563E-10
+Text=+ EG=1.206 FC=0.501042 IKF=0.640028 IKR=2.13438 IRB=0.1 IS=1.69178E-14
+Text=+ ISC=1.00976E-12 ISE=1.00976E-12 ITF=1 MJC=0.29548 MJE=0.352708 MJS=0.5
+Text=+ NC=3.96879 NE=2.66461 NF=0.937468 NR=1.08703 RB=47.8915 RBM=0.1 RC=0.730217
+Text=+ RE=0.000700364 TF=3.95E-10 TR=1E-07 VAF=13.4581 VAR=134.581 VJC=0.579837
+Text=+ VJE=0.651979 VJS=0.75 VTF=0.995664 XCJC=0.896875 XTB=1.44927 XTF=1.35721
+Text=+ XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS1C200LT1G PNP (BF=268.108 BR=13.5544 CJC=6.64789E-11 CJE=3.39195E-10
+Text=+ EG=1.206 FC=0.8 IKF=0.918441 IKR=9.18434 IRB=0.1 IS=2.10755E-14
+Text=+ ISC=3.24209E-13 ISE=6.58724E-13 ITF=0.506698 MJC=0.370173 MJE=0.317789
+Text=+ MJS=0.5 NC=4 NE=1.60888 NF=0.911448 NR=0.893145 RB=2.04832 RBM=0.1
+Text=+ RC=0.00100009 RE=0.0001 TF=1.04417E-09 TR=1E-07 VAF=10 VAR=36.3555
+Text=+ VJC=0.784127 VJE=0.594714 VJS=0.75 VTF=10.4603 XCJC=0.899047 XTB=1.39277
+Text=+ XTF=3.11678 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS1C200MZ4 PNP (BF=268.108 BR=13.5544 CJC=6.64789E-11 CJE=3.39195E-10
+Text=+ EG=1.206 FC=0.8 IKF=0.918441 IKR=9.18434 IRB=0.1 IS=2.10755E-14
+Text=+ ISC=3.24209E-13 ISE=6.58724E-13 ITF=0.506698 MJC=0.370173 MJE=0.317789
+Text=+ MJS=0.5 NC=4 NE=1.60888 NF=0.911448 NR=0.893145 RB=2.04832 RBM=0.1
+Text=+ RC=0.00100009 RE=0.0001 TF=1.04417E-09 TR=1E-07 VAF=10 VAR=36.3555
+Text=+ VJC=0.784127 VJE=0.594714 VJS=0.75 VTF=10.4603 XCJC=0.899047 XTB=1.39277
+Text=+ XTF=3.11678 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS1C300ET4G PNP (BF=324.657 BR=3.61139 CJC=1.71684E-10 CJE=6.91883E-10
+Text=+ EG=1.05395 FC=0.263087 IKF=1.44924 IKR=9.36579 IRB=0.0641022 IS=3.49685E-11
+Text=+ ISC=3.99977E-13 ISE=9.55079E-12 ITF=23.8446 MJC=0.379554 MJE=0.364147 MJS=0.5
+Text=+ NC=3.93751 NE=3.21782 NF=1.15909 NR=1.22383 RB=2.90157 RBM=0.0897821
+Text=+ RC=0.125026 RE=0.00873783 TF=1.32997E-09 TR=1E-07 VAF=23.9535 VAR=4.70695
+Text=+ VJC=0.594271 VJE=0.675968 VJS=0.75 VTF=5.98059 XCJC=0.802997 XTB=1.47708
+Text=+ XTF=8.58871 XTI=1.15447)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS12100M3T5G PNP (BF=229.798 BR=13.4817 CJC=2.20361E-11
+Text=+ CJE=4.37465E-11 EG=1.08594 FC=0.501042 IKF=1.54391 IKR=1E-05 IRB=0.1
+Text=+ IS=6.34849E-13 ISC=9.02526E-13 ISE=9.79805E-13 ITF=1 MJC=0.339661
+Text=+ MJE=0.366223 MJS=0.5 NC=3.97204 NE=3.61413 NF=1.08996 NR=1.28607 RB=29.5992
+Text=+ RBM=0.1 RC=0.139994 RE=0.000100017 TF=3.94967E-10 TR=1E-07 VAF=10.0557
+Text=+ VAR=60.9506 VJC=0.787725 VJE=0.797892 VJS=0.75 VTF=0.995664 XCJC=0.896875
+Text=+ XTB=1.0169 XTF=1.35721 XTI=1.001)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS12100UW3TCG PNP (BF=289.461 BR=28.9461 CJC=2.78955E-11
+Text=+ CJE=4.67399E-11 EG=1.05 FC=0.501042 IKF=0.675719 IKR=0.0226823 IRB=0.1
+Text=+ IS=1.17516E-12 ISC=3.67406E-16 ISE=4.44973E-16 ITF=1 MJC=0.242596
+Text=+ MJE=0.365993 MJS=0.5 NC=3.9538 NE=1.17542 NF=1.133 NR=1.15247 RB=5.95152
+Text=+ RBM=0.1 RC=0.323193 RE=0.0646385 TF=3.95E-10 TR=1E-07 VAF=15.2757 VAR=53.8924
+Text=+ VJC=0.460675 VJE=0.732868 VJS=0.75 VTF=0.995664 XCJC=0.896875 XTB=1.03365
+Text=+ XTF=1.35721 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS12100XV6T1G PNP (BF=289.461 BR=28.9461 CJC=2.78955E-11
+Text=+ CJE=4.67399E-11 EG=1.05 FC=0.501042 IKF=0.675719 IKR=0.0226823 IRB=0.1
+Text=+ IS=1.17516E-12 ISC=3.67406E-16 ISE=4.44973E-16 ITF=1 MJC=0.242596
+Text=+ MJE=0.365993 MJS=0.5 NC=3.9538 NE=1.17542 NF=1.133 NR=1.15247 RB=5.95152
+Text=+ RBM=0.1 RC=0.323193 RE=0.0646385 TF=3.95E-10 TR=1E-07 VAF=15.2757 VAR=53.8924
+Text=+ VJC=0.460675 VJE=0.732868 VJS=0.75 VTF=0.995664 XCJC=0.896875 XTB=1.03365
+Text=+ XTF=1.35721 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS12200LT1G PNP (BF=780.456 BR=78.0456 CJC=1.9132E-10 CJE=3.64888E-10
+Text=+ EG=1.206 FC=0.754742 IKF=2.16371 IKR=0.164292 IRB=0.1 IS=4.25202E-12
+Text=+ ISC=1E-16 ISE=1.79632E-14 ITF=0.00437513 MJC=0.305776 MJE=0.390704 MJS=0.5
+Text=+ NC=4 NE=1.09802 NF=1.0546 NR=1.08717 RB=1.48351 RBM=0.1 RC=0.0489815
+Text=+ RE=0.0097963 TF=4.38139E-10 TR=9.26133E-09 VAF=7.5 VAR=75 VJC=0.503103
+Text=+ VJE=0.700718 VJS=0.75 VTF=0.436235 XCJC=0.799891 XTB=0.1 XTF=0.0500001 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS12200WT1G PNP (BF=196.762 BR=19.6758 CJC=7.32933E-11 CJE=3.59913E-10
+Text=+ EG=1.20589 FC=0.520718 IKF=2.52279 IKR=10.0001 IRB=0.1 IS=6.92487E-14
+Text=+ ISC=3.43919E-16 ISE=1.1126E-10 ITF=0.0100398 MJC=0.315784 MJE=0.325395
+Text=+ MJS=0.5 NC=1 NE=3.65226 NF=0.971842 NR=0.987805 RB=3.112 RBM=0.1 RC=0.128256
+Text=+ RE=0.0256511 TF=8.52307E-10 TR=1E-07 VAF=6.5 VAR=58.7823 VJC=0.639466
+Text=+ VJE=0.663357 VJS=0.75 VTF=9.82219 XCJC=0.8 XTB=1.84225 XTF=0.939941 XTI=4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS12500UW3T2G PNP (BF=288.674 BR=28.8674 CJC=3.11595E-10
+Text=+ CJE=5.99231E-10 EG=1.05005 FC=0.8 IKF=6.56741 IKR=4.15608 IRB=0.18419
+Text=+ IS=4.77206E-12 ISC=1.00002E-16 ISE=1.00687E-11 ITF=0.00108413 MJC=0.3205
+Text=+ MJE=0.387307 MJS=0.5 NC=3.99999 NE=3.82695 NF=1.06283 NR=1.07895 RB=2.43528
+Text=+ RBM=0.100012 RC=0.0307716 RE=0.00615433 TF=1E-12 TR=1.54828E-08 VAF=9.8
+Text=+ VAR=95.623 VJC=0.422011 VJE=0.690379 VJS=0.75 VTF=61924.5 XTB=1.42919
+Text=+ XTF=438.941 XTI=4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNSS12600CF8T1G PNP (BF=724.9 BR=72.4916 CJC=4.3851E-10 CJE=9.02237E-10
+Text=+ EG=1.16092 FC=0.669192 IKF=4.37596 IKR=4.89719 IRB=0.204879 IS=9.03152E-12
+Text=+ ISC=9.99407E-17 ISE=2.98055E-14 ITF=1.52167 MJC=0.304655 MJE=0.416801 MJS=0.5
+Text=+ NC=4.00068 NE=1.1027 NF=1.06013 NR=1.07066 RB=2.17335 RBM=0.1 RC=0.0328855
+Text=+ RE=0.0065771 TF=4.60193E-10 TR=3.02112E-11 VAF=48.4053 VAR=484.053
+Text=+ VJC=0.568312 VJE=0.782233 VJS=0.75 VTF=0.119664 XCJC=0.90001 XTB=0.528673
+Text=+ XTF=1.30841 XTI=1.00015)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MPBJT.LIB
+Text=.MODEL 2N3719 PNP (BF=1.733657878042K BR=114.578788838029M
+Text=+ CJC=200.065964075556P CJE=437.448170496569P FC=500.000000875623M
+Text=+ IKF=1.020291621242 IKR=999.881419001101 IS=9.976157306757F
+Text=+ ISC=15.699938660115P ISE=949.953630065609F ITF=20.737384560384M
+Text=+ MJC=385.10568332733M MJE=427.061480357992M NC=2.000000003279
+Text=+ NE=1.259265081229 NF=910.728237673277M RC=64.230993911476M
+Text=+ RE=134.913341730933M TF=2.072558338631N TR=2.765277419151U VAF=100
+Text=+ VJC=700.000000017214M VJE=999.994942520243M VTF=9.999999541775
+Text=+ XTF=500.004584137552M)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MPBJT.LIB
+Text=.MODEL 2N3867 PNP (BF=1.733657878042K BR=114.578788838029M
+Text=+ CJC=200.065964075556P CJE=437.448170496569P FC=500.000000875623M
+Text=+ IKF=1.020291621242 IKR=999.881419001101 IS=9.976157306757F
+Text=+ ISC=15.699938660115P ISE=949.953630065609F ITF=20.737384560384M
+Text=+ MJC=385.10568332733M MJE=427.061480357992M NC=2.000000003279
+Text=+ NE=1.259265081229 NF=910.728237673277M RC=64.230993911476M
+Text=+ RE=134.913341730933M TF=2.072558338631N TR=2.765277419151U VAF=100
+Text=+ VJC=700.000000017214M VJE=999.994942520243M VTF=9.999999541775
+Text=+ XTF=500.004584137552M)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MSBJT.LBR
+Text=*** PNP Ampilifier transistors
+Text=.MODEL 2N5227 PNP (BF=1.21762K BR=181.3m CJC=22.9023p CJE=2p IKF=10K IKR=1.0342
+Text=+ IS=9.65895f ISC=24.9512p ISE=4.92397f ITF=10.0504m MJC=558.066m MJE=500m
+Text=+ NE=1.73742 NF=1.3696 RC=500m RE=1.99896 TF=1.3719n TR=10n VAF=100 VJC=700m
+Text=+ VTF=10 XTF=499.99m)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNST65010MW6 PNP (BF=10000 BR=9.00268 CJC=9.40391E-12 CJE=1.16535E-11
+Text=+ EG=1.05 FC=0.8 IKF=0.0496793 IKR=0.496793 IRB=0.1 IS=1.30179E-11
+Text=+ ISC=4.97704E-13 ISE=4.97704E-13 ITF=2.18584 MJC=0.412175 MJE=0.245314 MJS=0.5
+Text=+ NC=4 NE=1.62319 NF=1.40809 NR=1.37703 RB=6.96213 RBM=0.1 RC=2.16718
+Text=+ RE=0.433435 TF=5.97641E-10 TR=1E-07 VAF=65.4419 VAR=88.2169 VJC=0.4
+Text=+ VJE=0.612436 VJS=0.75 VTF=1389.53 XCJC=0.899882 XTB=0.1 XTF=198.79 XTI=1)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ON_SEMI.LIB
+Text=.MODEL QNST45010MW6T1G PNP (BF=10000 BR=0.313958 CJC=9.13615E-12
+Text=+ CJE=1.14119E-11 EG=1.206 FC=0.8 IKF=0.0486984 IKR=0.486984 IRB=0.1
+Text=+ IS=6.40452E-13 ISC=1E-16 ISE=3.50933E-14 ITF=12.2508 MJC=0.389243
+Text=+ MJE=0.236664 MJS=0.5 NC=3.99246 NE=1.48639 NF=1.27689 NR=1.5 RB=0.1 RBM=0.1
+Text=+ RC=3.90338 RE=0.375422 TF=6.0309E-10 TR=1E-07 VAF=1000 VAR=455.615 VJC=0.4
+Text=+ VJE=0.643535 VJS=0.75 VTF=582.623 XCJC=0.800175 XTB=0.1 XTF=1000 XTI=1)
+Text=.MODEL TIP31 PNP ()
+Text=.MODEL TIP31A PNP ()
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\DIODESINC_BJT.LIB
+Text=.MODEL 2DC4672 NPN (BF=230 BR=56 CJC=51E-12 CJE=318E-12 IKF=2 IKR=1
+Text=+ IS=2.218E-13 ISC=2.971E-13 ISE=2.9E-14 MJC=.42 NC=1.321 NE=1.35 NF=.9956
+Text=+ NR=.995 RB=.04 RC=.069 RE=.075 TF=.77E-9 TR=27E-9 VAF=100 VAR=30 VJC=.595)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\DIODESINC_BJT.LIB
+Text=.MODEL 2DD1766Q NPN (BF=201 BR=4.00 CJC=41.4P CJE=218P EG=1.12 IKF=2.97
+Text=+ IKR=4.50 IS=6.65F ISE=13.0F MJC=0.300 MJE=0.500 NE=2.00 NF=1.00 NR=1.00
+Text=+ RB=0.275 RC=27.5M RE=68.7M TF=538P TR=101N VAF=102 VAR=20.0 VJC=0.300
+Text=+ VJE=1.10 XTB=1.5)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MSBJT.LBR
+Text=*** NPN General purpose transistor
+Text=.MODEL 2N699 NPN (BF=89.1701 BR=4.99999 CJC=66.3325p CJE=2p IKF=149.835m
+Text=+ IKR=209.192 IS=10.2451f ISC=6.29099f ISE=948.549f ITF=10.1413m MJC=571.784m
+Text=+ MJE=500m NE=2.04347 NF=1.27541 RE=2 TF=2.5418n TR=10n VAF=100 VJC=700.227m
+Text=+ VTF=10 XTF=499.998m)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MSBJT.LBR
+Text=*** NPN General purpose transistor
+Text=.MODEL 2N2222A NPN (BF=200.601 BR=155.257m CJC=36.6437p CJE=35.3531p
+Text=+ IKF=1.77131 IKR=995.298 IS=10.017f ISC=9.15251p ISE=999.157f ITF=9.91019m
+Text=+ MJC=558.066m MJE=642.88m NE=1.83441 NF=979.99m RE=668.817m TF=336.941p
+Text=+ TR=2.26304u VAF=100 VJC=700m VJE=700m VTF=10 XTF=499.994m)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\CS.LIB
+Text=.MODEL 2N2222AUB NPN (BF=240 BR=4.00 CJC=12.4P CJE=24.9P EG=1.12 IKF=0.293
+Text=+ IKR=0.600 IS=2.20F ISE=2.73P MJC=0.300 MJE=0.500 NE=2.00 NF=1.00 NR=1.00
+Text=+ RB=0.777 RC=77.7M RE=0.194 TF=371P TR=64.0N VAF=114 VAR=24.0 VJC=0.300
+Text=+ VJE=1.10 XTB=1.5)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MSBJT.LBR
+Text=*** NPN Amplifier transistor
+Text=.MODEL 2N2270 NPN (BF=159.22 BR=3.25509 CJC=45.8046p CJE=84.8478p IKF=993.683m
+Text=+ IKR=1.00146 IS=9.99994f ISC=47.3465p ISE=1.0086p ITF=10.6905m MJC=558.065m
+Text=+ MJE=642.888m NE=1.63047 NF=1.00011 RE=634.829m TF=411.916p TR=10n VAF=100
+Text=+ VJC=700m VJE=700m VTF=10 XTF=499.987m)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MPBJT.LIB
+Text=.MODEL 2N6292 NPN (BF=257.376060061083 BR=87.125608988485M
+Text=+ CJC=124.540599255013P CJE=188.893896668222P FC=500.000000591082M
+Text=+ IKF=1.000335161763 IKR=746.22651199231M IS=9.963807495091F
+Text=+ ISC=99.000745459809P ISE=.000000121848F ITF=14.024339176625M
+Text=+ MJC=304.589364901623M MJE=312.49083403768M NC=2.000000001182
+Text=+ NE=2.906476368026 NF=1.014517975955 RC=46.191089229436M RE=300.426264438724M
+Text=+ TF=31.454670514606N TR=30.069790737377U VAF=100 VJC=700.000000004245M
+Text=+ VJE=751.358431077473M VTF=9.999999939764 XTF=499.997219718572M)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ROHM_TRANSISTOR.LIB
+Text=.MODEL 2SB1184 PNP (BF=100.72 BR=77.572 CJC=156.05E-12 CJE=983.02E-12
+Text=+ IKF=4.3760 IKR=15.080 IS=2.3000E-12 ISC=377.34E-12 ISE=2.3000E-12 ITF=9.7241
+Text=+ MJC=.41274 MJE=.58268 NC=1.4838 NE=1.3995 NK=.67175 RB=.38561 RC=15.139E-3
+Text=+ RE=.1 TF=2.0777E-9 TR=43.264E-9 VAF=6.2769 VAR=100 VTF=14.341 XTB=1.5000
+Text=+ XTF=11.061)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ROHM_TRANSISTOR.LIB
+Text=.MODEL 2SB1241 PNP (BF=140.43 BR=30.282 CJC=89.315E-12 CJE=311.85E-12
+Text=+ IKF=7.9366 IKR=13.783 IS=220.00E-15 ISC=274.44E-12 ISE=220.00E-15 ITF=7.7977
+Text=+ MJC=.50953 MJE=.35932 NC=1.5976 NE=1.6291 NK=.83042 RB=.6938 RC=.149
+Text=+ RE=50.000E-3 TF=714.69E-12 TR=101.04E-9 VAF=23.200 VAR=100 VTF=22.370
+Text=+ XTB=1.5000 XTF=11.729)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MPBJT.LIB
+Text=.MODEL 2N6213 PNP (BF=322.621995772802 BR=110.958793589034M CJC=1.007702649918N
+Text=+ CJE=2P FC=500.000000295982M IKF=80.017546756474M IKR=987.091169935231
+Text=+ IS=9.998081468052F ISC=170.189691820055F ISE=2.103138613463P
+Text=+ ITF=10.606558880287M MJC=558.06609015695M MJE=500M NC=2.000000002202
+Text=+ NE=1.870427002771 NF=1.001316462089 RC=1.168110866736 RE=565.140545938055M
+Text=+ TF=6.280142904649N TR=52.417318071454U VAF=100 VJC=700M VTF=10.000000026704
+Text=+ XTF=499.999794176935M)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\MPBJT.LIB
+Text=.MODEL 2N6212 PNP (BF=199.994462088853 BR=99.166544748422M CJC=1.007702649918N
+Text=+ CJE=2P FC=500.000000295982M IKF=167.637034042635M IKR=1.108409647041
+Text=+ IS=9.998081468052F ISC=539.148138384182F ISE=989.492748141028F
+Text=+ ITF=10.606558880287M MJC=558.06609015695M MJE=500M NC=2.000000002202
+Text=+ NE=1.644976626216 NF=1.001316462089 RC=784.418098345498M RE=565.140545938055M
+Text=+ TF=6.280142904649N TR=103.078259000349U VAF=100 VJC=700M VTF=10.000000026704
+Text=+ XTF=499.999794176935M)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZXTP2006E6 PNP (BF=610 BR=75 CJC=170E-12 CJE=460E-12 GAMMA=25E-10
+Text=+ IKF=2.5 IKR=1 IS=11E-13 ISC=1.1E-13 ISE=1.1E-13 MJC=0.42 MJE=0.54 NC=1.31
+Text=+ NE=1.49 QUASIMOD=1 RB=0.3 RC=0.012 RCO=0.5 RE=0.0072 TF=9E-10 TR=8.5E-9
+Text=+ TRB1=.003 TRC1=.003 TRE1=.003 VAF=20.1 VAR=4.3 VJC=0.62 VJE=1.0 XTB=1.5)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZTX213A PNP (BF=330 BR=13 CJC=10.5E-12 CJE=16E-12 IKF=.1 IKR=.012
+Text=+ IS=1.149E-14 ISC=1.43E-14 ISE=5E-14 MJC=.415 NC=1.1 NE=1.4 NF=.9872 NR=.996
+Text=+ RB=.2 RC=.95 RE=.4 TF=.493E-9 TR=73.55E-9 VAF=84.56 VAR=8.15 VJC=.565)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZTX213A_ZX PNP (BF=330 BR=13 CJC=10.5E-12 CJE=16E-12 IKF=.1 IKR=.012
+Text=+ IS=1.149E-14 ISC=1.43E-14 ISE=5E-14 MJC=.415 NC=1.1 NE=1.4 NF=.9872 NR=.996
+Text=+ RB=.2 RC=.95 RE=.4 TF=.493E-9 TR=73.55E-9 VAF=84.56 VAR=8.15 VJC=.565)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZTX549 PNP (BF=200 BR=50 CJC=55E-12 CJE=120.9E-12 IKF=1.8 IKR=0.2
+Text=+ IS=1.3E-13 ISC=3.5E-14 ISE=6E-14 MJC=0.3541 MJE=.4685 NC=1.23 NE=1.45 RB=0.7
+Text=+ RC=0.122 RE=0.063 TF=0.51E-9 TR=3.6E-9 VAF=104 VAR=8 VJC=0.1928 VJE=1.041)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\DIODESINC_BJT.LIB
+Text=.MODEL ZXTP26020DMF PNP (BF=590 BR=52 CJC=51E-12 CJE=147E-12 GAMMA=1.3E-9 IKF=2
+Text=+ IKR=0.6 IS=5.5E-13 ISC=1.8E-13 ISE=1.2E-13 MJC=0.33 MJE=0.48 NC=1.39 NE=1.55
+Text=+ NF=1.005 QUASIMOD=1 RB=0.33 RC=0.012 RCO=0.66 RE=0.067 TF=4.5E-10 TR=5.6E-9
+Text=+ TRB1=0.003 TRC1=0.004 TRE1=0.004 VAF=21 VAR=5.7 VJC=0.51 VJE=0.88 XTB=1.5)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZXTP25100BFH PNP (BF=200 BR=17 CJC=49E-12 CJE=231E-12 GAMMA=2.5E-8 IKF=6
+Text=+ IKR=1 IS=2E-13 ISC=1.4E-13 ISE=1.6E-14 MJC=0.34 MJE=0.46 NC=1.1 NE=1.65
+Text=+ QUASIMOD=1 RB=0.2 RC=0.015 RCO=3.8 RE=0.012 TF=0.6E-9 TR=6.5E-8 TRB1=0.005
+Text=+ TRC1=0.005 TRE1=0.005 VAF=121 VAR=16 VJC=0.5 VJE=0.9 XTB=1.4)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZXTP25040DFL PNP (BF=470 BR=97 CJC=58E-12 CJE=183E-12 GAMMA=0.6E-9
+Text=+ IKF=3.5 IKR=1 IS=4E-13 ISC=7.5E-14 ISE=10E-14 MJC=0.41 MJE=0.5 NC=1.2 NE=1.49
+Text=+ QUASIMOD=1 RB=0.12 RC=0.0111 RCO=0.88 RE=0.014 TF=3.9E-10 TR=7.8E-9
+Text=+ TRB1=0.003 TRC1=0.003 TRE1=0.003 VAF=23 VAR=4.5 VJC=0.62 VJE=0.95 XTB=1.5)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZXTP25020CFF PNP (BF=400 BR=110 CJC=80E-12 CJE=199E-12 IKF=3.8 IKR=2
+Text=+ IS=2.5E-13 ISC=1.3E-13 ISE=1.9E-13 MJC=0.3 MJE=0.48 NC=1.45 RB=0.2 RC=0.02
+Text=+ RE=0.01 TF=3.8E-10 TR=3.8E-9 TRB1=.02 VAF=18.7 VAR=5 VJC=0.53 VJE=0.9 XTB=1.5)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZXTP2009Z PNP (BF=600 BR=105 CJC=165E-12 CJE=535E-12 IKF=2.5 IKR=1.5
+Text=+ IS=2E-12 ISC=2E-13 ISE=9E-13 NC=1.4 NE=1.55 NR=.97 RB=700E-3 RC=20E-3 RE=2E-3
+Text=+ TF=0.6E-9 TR=10E-9 VAF=26 VAR=2.41 XTB=1.5)
+Text=*** From file C:\Users\ALL_F4THER\Downloads\mc12cd\library\ZETEX.LIB
+Text=.MODEL ZXTP2008G PNP (BF=208 BR=100 CJC=246E-12 CJE=796E-12 IKF=7.5 IKR=1.3
+Text=+ IS=1.5111E-12 ISC=1.392E-13 ISE=1.335E-13 MJC=0.338 NC=1.22 NE=1.42 NF=1.0127
+Text=+ NR=1.009 RB=0.12 RC=0.004 RE=0.022 TF=1.01E-9 TR=5E-9 VAF=43.4 VAR=9.7
+Text=+ VJC=0.4294 XTB=1.4)
+
+[InfoPage]
+InfoPage=True
+Warnings=True
+System=True
+Defines=True
+Array=True
+Model=True
+Measure=True
+MacroSubckt=True
+NotUsed=True
+ComponentCounts=True
+VariablizePaths=False
+DontShowPaths=False
+SimulationLog=True
+
+[Transient]
+WinID=1
+Window Placement=2,3, -1,-1, -8,-31, 104,104,1305,472
+Font=Height=-19,FStyle=0,Color=#0000FF,Name=Arial
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Title
+AutoTitle=Yes
+Grid Color=#808080
+Grid Weight=1
+Grid Pattern=Dot6
+Tracker Foreground=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Tracker Background=#FFFF00
+Baseline color=#0000FF
+BaseLine Weight=1
+CurveFit color=#FF0000
+CurveFit Weight=2
+CurveFit Pattern=Dash
+Static Grids=False
+PlusMark=False
+MinorLog25=Off
+LabelMinor=Off
+DataPoints=False
+Token=False
+Ruler=False
+XAxisGrids=True
+YAxisGrids=True
+MinorLogGrids=True
+BaseLine=True
+AlignZ=True
+Align Cursors=True
+TagFormatX=3
+TagFormatY=3
+FormulaFormat=2
+EndMode=SCALE
+Graph Background=#FFFFFF
+Tracker Intercept=False
+Tracker Mouse=True
+Tracker Cursor=True
+Tracker Cursor BranchInfo=False
+Horizontal Cursor=True
+Same Y Scales=Yes
+Enable X Scaling=True
+Enable Y Scaling=True
+Keep X Scales The Same=True
+Number of Grids X=5
+Number of Grids Y=5
+Cursor Select Color Primary=#C0C0C0
+Cursor Select Color Secondary=#FF0000
+Data Point Labels Color Fore=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Data Point Labels Color Back=#FFFF00
+OperPoint=True
+OperPointOnly=False
+AutoScaleRanges=True
+FixedTimeStep=False
+DoPSS=False
+PSS_Periods="1"
+PSS_Iterations="5"
+PSS_Error="1u"
+PSS_ShowPlots=True
+FFT_NPts="8192"
+FFT_IncludeDCHarmonic=False
+FFT_AutoScale_Harmonics="10"
+PrinterAutoTile=No
+PrinterBlackBorder=No
+MonMaxShow=7
+MonPageWidth=42
+MonPlotWidth=26
+MonExprXWidth=96
+MonExprYWidth=354
+MonRangeXWidth=115
+MonRangeYWidth=103
+AnimateWait=None
+AnimateWaitTime=500
+AnimatePressAfter=0
+Save_For_Future=No
+Reduce_Display=1
+Reduce_Save=1
+Reduce_ThrowDataOut=0
+Num Out Header Left
+Num Out Header Center="$MC\n$user\n$company\n$Analysis of $name\n$date $time"
+Num Out Header Right
+Num Out Delimiter=32
+Num Out Write=True
+Num Out Write Main Header=True
+Num Out Write Limits=True
+Num Out Write Branch Header=True
+Num Out Write Models=False
+Num Out Write Zero Models=True
+Num Out Write Undefined Models=True
+Num Out Write Operating Point=True
+Num Out Write Measurement Values=True
+Num Out Write Tolerance Detail=True
+Num Out Write Values=True
+Num Out Write Waveform Header=True
+Num Out Allow Dup Y Expr=False
+Num Out Low="TSTART"
+Num Out High="TMAX"
+Num Out Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Num Out Window Placement=2,3, -1,-1, -8,-31, 104,104,1305,472
+Num Out Format=3
+Num Out HideNonSelected=False
+Num Out UseActualDataPoints=False
+AutoSaveWave=False
+Wave Format=16E
+State Variables Format=5E
+Print Individual Pages=False
+
+[Tools]
+Pos=Top
+SELECT=Yes
+PAN=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=No
+PARALLELOGRAM=No
+POLYCLOS=No
+POLYOPEN=No
+SCALE=Yes
+CURSOR=Yes
+MEASUREH=Yes
+MEASUREV=Yes
+TAG=Yes
+PTAG=Yes
+TEXT=Yes
+PROPERTY=Yes
+START=Yes
+STOP=Yes
+PAUSE=Yes
+RESUME=No
+DATAPTS=Yes
+TOKENS=Yes
+RULER=Yes
+PLUS=Yes
+XAXIS=Yes
+YAXIS=Yes
+MINORLOG=Yes
+LOG25=Yes
+BASELINE=Yes
+HORIZCUR=Yes
+GOTOX=Yes
+GOTOY=Yes
+GOTOPERF=Yes
+GOTOBRNC=Yes
+CLEAR_ACCUMULATED=Yes
+PDELETE_ALL_PLOTS=Yes
+NEXT=Yes
+NEXTIN=Yes
+PEAK=Yes
+VALLEY=Yes
+HIGH=Yes
+LOW=Yes
+INFLECTN=Yes
+GHIGH=Yes
+GLOW=Yes
+BOTTOM=Yes
+TOP=Yes
+WAVEFORMBUFFER=Yes
+AOUTPUT=Yes
+PKEY=Yes
+ENXSCALE=Yes
+ENYSCALE=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALE=Yes
+RESTORESCALE=No
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+SELNEXT=No
+NORMALIZE=No
+NORMALIZE_MIN=No
+NORMALIZE_MAX=No
+ADD_TAG_LEFT=No
+ADD_TAG_RIGHT=No
+ADD_HORZ_TAG=No
+ADD_VERT_TAG=No
+ALIGN_CURSORS=No
+ALIGN_CURSORSZ=No
+CURSORTOCLIPBOARD=No
+TRACKER_CURSOR=No
+TRACKER_CURSOR_BRANCHINFO=No
+TRACKER_INTERCEPT=No
+TRACKER_MOUSE=No
+TOFRONT=Yes
+TOBACK=Yes
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+LABEL_WAVEFORM=No
+LABEL_DATA_POINTS=No
+WFB_ADD_TO_LIMITS=No
+ENVELOPE=No
+SAMEYSCALES=No
+KEEPXSCALESTHESAME=No
+CURVEFIT=No
+ADD_MARKER=No
+SHOWWATCH=No
+BP=No
+TOGGLEMODE=No
+REMOVEALLTEXT=No
+AUTOSCALEX=No
+LABELALLMINOR=No
+ALIGNLEFT=No
+ALIGNCENTER=No
+ALIGNRIGHT=No
+ALIGNTOP=No
+ALIGNMIDDLES=No
+ALIGNBOTTOM=No
+
+[APage]
+Analysis=Transient
+Name="MAIN"
+
+[AObject]
+Analysis=Transient
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=4
+AliasID1=4
+Pos=0.0028403757337053296,55.251669963747652,0.0034782608695652175,37.5
+Font=Height=-15,FStyle=0,Color=#008080,Name=Arial
+Format=3
+FormatY=3
+
+[AObject]
+Analysis=Transient
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=4
+AliasID1=4
+w2=4
+AliasID2=4
+Pos=0.002384593430378132,55.177475084767906,0.003204464351529207,54.678782592668611
+Posm=69.791666666666671
+Font=Height=-15,FStyle=0,Color=#008080,Name=Arial
+Format=3
+
+[AObject]
+Analysis=Transient
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=4
+AliasID1=4
+Pos=0.00029269293372377608,25.428000000000001,5.5074744295830055e-005,28.969194312796208
+Font=Height=-15,FStyle=0,Color=#FF00FF,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=Transient
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=4
+AliasID1=4
+Pos=0.00029269293372377608,25.428000000000001,0.00036978756884343037,28.969194312796208
+Font=Height=-15,FStyle=0,Color=#FF00FF,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AC]
+WinID=2
+Window Placement=2,3, -1,-1, -8,-31, 0,0,1201,368
+Font=Height=-19,FStyle=0,Color=#0000FF,Name=Arial
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Title
+AutoTitle=Yes
+Grid Color=#808080
+Grid Weight=1
+Grid Pattern=Dot6
+Tracker Foreground=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Tracker Background=#FFFF00
+Baseline color=#0000FF
+BaseLine Weight=1
+CurveFit color=#FF0000
+CurveFit Weight=2
+CurveFit Pattern=Dash
+Static Grids=False
+PlusMark=False
+MinorLog25=Off
+LabelMinor=Off
+DataPoints=False
+Token=False
+Ruler=False
+XAxisGrids=True
+YAxisGrids=True
+MinorLogGrids=True
+BaseLine=False
+AlignZ=True
+Align Cursors=True
+TagFormatX=3
+TagFormatY=3
+FormulaFormat=2
+EndMode=SCALE
+Graph Background=#FFFFFF
+Tracker Intercept=False
+Tracker Mouse=True
+Tracker Cursor=True
+Tracker Cursor BranchInfo=False
+Horizontal Cursor=True
+Same Y Scales=Yes
+Enable X Scaling=True
+Enable Y Scaling=True
+Keep X Scales The Same=True
+Number of Grids X=5
+Number of Grids Y=5
+Cursor Select Color Primary=#C0C0C0
+Cursor Select Color Secondary=#FF0000
+Data Point Labels Color Fore=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Data Point Labels Color Back=#FFFF00
+OperPoint=True
+AutoScaleRanges=True
+FFT_NPts="8192"
+FFT_IncludeDCHarmonic=False
+FFT_AutoScale_Harmonics="10"
+PrinterAutoTile=No
+PrinterBlackBorder=No
+MonMaxShow=5
+MonPageWidth=66
+MonPlotWidth=21
+MonExprXWidth=142
+MonExprYWidth=260
+MonRangeXWidth=90
+MonRangeYWidth=90
+AnimateWait=None
+AnimateWaitTime=500
+AnimatePressAfter=0
+Save_For_Future=No
+Reduce_Display=1
+Reduce_Save=1
+Reduce_ThrowDataOut=0
+Num Out Header Left
+Num Out Header Center="$MC\n$user\n$company\n$Analysis of $name\n$date $time"
+Num Out Header Right
+Num Out Delimiter=32
+Num Out Write=True
+Num Out Write Main Header=True
+Num Out Write Limits=True
+Num Out Write Branch Header=True
+Num Out Write Models=False
+Num Out Write Zero Models=True
+Num Out Write Undefined Models=True
+Num Out Write Operating Point=True
+Num Out Write Measurement Values=True
+Num Out Write Tolerance Detail=True
+Num Out Write Noise=True
+Num Out Write Values=True
+Num Out Write Waveform Header=True
+Num Out Allow Dup Y Expr=False
+Num Out Low="FMIN"
+Num Out High="FMAX"
+Num Out Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Num Out Format=3
+Num Out HideNonSelected=False
+Num Out UseActualDataPoints=False
+AutoSaveWave=False
+Wave Format=16E
+State Variables Format=5E
+Print Individual Pages=False
+
+[Tools]
+Pos=Top
+SELECT=Yes
+PAN=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=No
+PARALLELOGRAM=No
+POLYCLOS=No
+POLYOPEN=No
+SCALE=Yes
+CURSOR=Yes
+MEASUREH=Yes
+MEASUREV=Yes
+TAG=Yes
+PTAG=Yes
+TEXT=Yes
+PROPERTY=Yes
+START=Yes
+STOP=Yes
+PAUSE=Yes
+RESUME=No
+DATAPTS=Yes
+TOKENS=Yes
+RULER=Yes
+PLUS=Yes
+XAXIS=Yes
+YAXIS=Yes
+MINORLOG=Yes
+LOG25=Yes
+BASELINE=Yes
+HORIZCUR=Yes
+GOTOX=Yes
+GOTOY=Yes
+GOTOPERF=Yes
+GOTOBRNC=Yes
+CLEAR_ACCUMULATED=Yes
+PDELETE_ALL_PLOTS=Yes
+NEXT=Yes
+NEXTIN=Yes
+PEAK=Yes
+VALLEY=Yes
+HIGH=Yes
+LOW=Yes
+INFLECTN=Yes
+GHIGH=Yes
+GLOW=Yes
+BOTTOM=Yes
+TOP=Yes
+WAVEFORMBUFFER=Yes
+AOUTPUT=Yes
+PKEY=Yes
+ENXSCALE=Yes
+ENYSCALE=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALE=Yes
+RESTORESCALE=No
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+SELNEXT=No
+NORMALIZE=No
+NORMALIZE_MIN=No
+NORMALIZE_MAX=No
+ADD_TAG_LEFT=No
+ADD_TAG_RIGHT=No
+ADD_HORZ_TAG=No
+ADD_VERT_TAG=No
+ALIGN_CURSORS=No
+ALIGN_CURSORSZ=No
+CURSORTOCLIPBOARD=No
+TRACKER_CURSOR=No
+TRACKER_CURSOR_BRANCHINFO=No
+TRACKER_INTERCEPT=No
+TRACKER_MOUSE=No
+TOFRONT=Yes
+TOBACK=Yes
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+LABEL_WAVEFORM=No
+LABEL_DATA_POINTS=No
+WFB_ADD_TO_LIMITS=No
+ENVELOPE=No
+SAMEYSCALES=No
+KEEPXSCALESTHESAME=No
+CURVEFIT=No
+ADD_MARKER=No
+SHOWWATCH=No
+BP=No
+TOGGLEMODE=No
+REMOVEALLTEXT=No
+AUTOSCALEX=No
+LABELALLMINOR=No
+ALIGNLEFT=No
+ALIGNCENTER=No
+ALIGNRIGHT=No
+ALIGNTOP=No
+ALIGNMIDDLES=No
+ALIGNBOTTOM=No
+
+[APage]
+Analysis=AC
+Name="MAIN"
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=1
+AliasID1=2
+Pos=4.1290000000000013,-166.3710173421953,4.6182683944956784,23.80952380952381
+Font=Height=-15,FStyle=0,Color=#FF0000,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=0
+AliasID1=1
+Pos=5.1780000000000008,4.6368634617651772,3.0595435546804786,42.857142857142854
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=0
+AliasID1=1
+Pos=4.1287722019668038,-2.3314683517128287e-015,2.433497314007524,38.095238095238095
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=1
+AliasID1=2
+Pos=5.1777764962132897,-180,3.0595435546804786,9.5238095238095237
+Font=Height=-15,FStyle=0,Color=#FF0000,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=0
+AliasID1=1
+Pos=4.1287722019668038,-2.3314683517128287e-015,4.1552400308200728,25.863264020163832
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=3
+AliasID1=3
+Pos=9.9327799006784865,-7,5.8710330718299595,6.8119266055045911
+Font=Height=-15,FStyle=0,Color=#008000,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=3
+AliasID1=3
+Pos=1,-25.985564209207546,1.191544727251677,-12.110091743119263
+Font=Height=-15,FStyle=0,Color=#008000,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=AC
+Object=MeasureH
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=0
+AliasID1=1
+w2=0
+AliasID2=1
+Pos=15.546244280633751,20.047717759384859,20711.439823932124,23.002220313312591
+Posm=15.75221238938053
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+Format=3
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=0
+AliasID1=1
+Pos=310000,4.4521508968397026,183286.63225143231,24.290721107509043
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=0
+AliasID1=1
+Pos=15.45937158405982,20,18.34560091260817,39.637255760974391
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=0
+AliasID1=1
+Pos=24.04151349476135,22.934999999999999,13.155054978661196,32.511848341232223
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[AObject]
+Analysis=AC
+Object=Tag
+Locked=True
+EndPoint=ArrowF
+CBorder=#000080
+w=0
+AliasID1=1
+Pos=21042.510883021685,22.934999999999992,25781.438328331311,32.511848341232223
+Font=Height=-15,FStyle=0,Color=#0000FF,Name=Arial
+Format=3
+FormatY=3
+Branch=0
+
+[DC]
+WinID=3
+Window Placement=2,3, -1,-1, -8,-31, 0,0,1201,368
+Font=Height=-19,FStyle=0,Color=#0000FF,Name=Arial
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Title
+AutoTitle=Yes
+Grid Color=#808080
+Grid Weight=1
+Grid Pattern=Dot6
+Tracker Foreground=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Tracker Background=#FFFF00
+Baseline color=#0000FF
+BaseLine Weight=1
+CurveFit color=#FF0000
+CurveFit Weight=2
+CurveFit Pattern=Dash
+Static Grids=False
+PlusMark=False
+MinorLog25=Off
+LabelMinor=Off
+DataPoints=False
+Token=False
+Ruler=False
+XAxisGrids=True
+YAxisGrids=True
+MinorLogGrids=True
+BaseLine=False
+AlignZ=True
+Align Cursors=True
+TagFormatX=3
+TagFormatY=3
+FormulaFormat=2
+EndMode=SCALE
+Graph Background=#FFFFFF
+Tracker Intercept=False
+Tracker Mouse=True
+Tracker Cursor=True
+Tracker Cursor BranchInfo=False
+Horizontal Cursor=False
+Same Y Scales=Yes
+Enable X Scaling=True
+Enable Y Scaling=True
+Keep X Scales The Same=True
+Number of Grids X=5
+Number of Grids Y=5
+Cursor Select Color Primary=#C0C0C0
+Cursor Select Color Secondary=#FF0000
+Data Point Labels Color Fore=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Data Point Labels Color Back=#FFFF00
+AutoScaleRanges=True
+PrinterAutoTile=No
+PrinterBlackBorder=No
+MonMaxShow=3
+MonPageWidth=66
+MonPlotWidth=21
+MonExprXWidth=142
+MonExprYWidth=285
+MonRangeXWidth=90
+MonRangeYWidth=90
+AnimateWait=None
+AnimateWaitTime=500
+AnimatePressAfter=0
+Save_For_Future=No
+Reduce_Display=1
+Reduce_Save=1
+Reduce_ThrowDataOut=0
+Num Out Header Left
+Num Out Header Center="$MC\n$user\n$company\n$Analysis of $name\n$date $time"
+Num Out Header Right
+Num Out Delimiter=32
+Num Out Write=True
+Num Out Write Main Header=True
+Num Out Write Limits=True
+Num Out Write Branch Header=True
+Num Out Write Models=False
+Num Out Write Zero Models=True
+Num Out Write Undefined Models=True
+Num Out Write Measurement Values=True
+Num Out Write Tolerance Detail=True
+Num Out Write Values=True
+Num Out Write Waveform Header=True
+Num Out Allow Dup Y Expr=False
+Num Out Low="DCMIN"
+Num Out High="DCMAX"
+Num Out Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Num Out Format=3
+Num Out HideNonSelected=False
+Num Out UseActualDataPoints=False
+AutoSaveWave=False
+Wave Format=16E
+State Variables Format=5E
+Print Individual Pages=False
+
+[Tools]
+Pos=Top
+SELECT=Yes
+PAN=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=No
+PARALLELOGRAM=No
+POLYCLOS=No
+POLYOPEN=No
+SCALE=Yes
+CURSOR=Yes
+MEASUREH=Yes
+MEASUREV=Yes
+TAG=Yes
+PTAG=Yes
+TEXT=Yes
+PROPERTY=Yes
+START=Yes
+STOP=Yes
+PAUSE=Yes
+RESUME=No
+DATAPTS=Yes
+TOKENS=Yes
+RULER=Yes
+PLUS=Yes
+XAXIS=Yes
+YAXIS=Yes
+MINORLOG=Yes
+LOG25=Yes
+BASELINE=Yes
+HORIZCUR=Yes
+GOTOX=Yes
+GOTOY=Yes
+GOTOPERF=Yes
+GOTOBRNC=Yes
+CLEAR_ACCUMULATED=Yes
+PDELETE_ALL_PLOTS=Yes
+NEXT=Yes
+NEXTIN=Yes
+PEAK=Yes
+VALLEY=Yes
+HIGH=Yes
+LOW=Yes
+INFLECTN=Yes
+GHIGH=Yes
+GLOW=Yes
+BOTTOM=Yes
+TOP=Yes
+WAVEFORMBUFFER=Yes
+AOUTPUT=Yes
+PKEY=Yes
+ENXSCALE=Yes
+ENYSCALE=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALE=Yes
+RESTORESCALE=No
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+SELNEXT=No
+NORMALIZE=No
+NORMALIZE_MIN=No
+NORMALIZE_MAX=No
+ADD_TAG_LEFT=No
+ADD_TAG_RIGHT=No
+ADD_HORZ_TAG=No
+ADD_VERT_TAG=No
+ALIGN_CURSORS=No
+ALIGN_CURSORSZ=No
+CURSORTOCLIPBOARD=No
+TRACKER_CURSOR=No
+TRACKER_CURSOR_BRANCHINFO=No
+TRACKER_INTERCEPT=No
+TRACKER_MOUSE=No
+TOFRONT=Yes
+TOBACK=Yes
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+LABEL_WAVEFORM=No
+LABEL_DATA_POINTS=No
+WFB_ADD_TO_LIMITS=No
+ENVELOPE=No
+SAMEYSCALES=No
+KEEPXSCALESTHESAME=No
+CURVEFIT=No
+ADD_MARKER=No
+SHOWWATCH=No
+BP=No
+TOGGLEMODE=No
+REMOVEALLTEXT=No
+AUTOSCALEX=No
+LABELALLMINOR=No
+ALIGNLEFT=No
+ALIGNCENTER=No
+ALIGNRIGHT=No
+ALIGNTOP=No
+ALIGNMIDDLES=No
+ALIGNBOTTOM=No
+
+[HmDistortion]
+WinID=4
+Window Placement=0,1, -1,-1, -8,-31, 761,0,1522,582
+Font=Height=-19,FStyle=0,Color=#0000FF,Name=Arial
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Title
+AutoTitle=Yes
+Grid Color=#808080
+Grid Weight=1
+Grid Pattern=Dot6
+Tracker Foreground=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Tracker Background=#FFFF00
+Baseline color=#0000FF
+BaseLine Weight=1
+CurveFit color=#FF0000
+CurveFit Weight=2
+CurveFit Pattern=Dash
+Static Grids=False
+PlusMark=False
+MinorLog25=Off
+LabelMinor=Off
+DataPoints=False
+Token=False
+Ruler=False
+XAxisGrids=True
+YAxisGrids=True
+MinorLogGrids=False
+BaseLine=False
+AlignZ=True
+Align Cursors=True
+TagFormatX=3
+TagFormatY=3
+FormulaFormat=2
+EndMode=SCALE
+Graph Background=#FFFFFF
+Tracker Intercept=False
+Tracker Mouse=True
+Tracker Cursor=True
+Tracker Cursor BranchInfo=False
+Horizontal Cursor=False
+Same Y Scales=Yes
+Enable X Scaling=True
+Enable Y Scaling=True
+Keep X Scales The Same=True
+Number of Grids X=5
+Number of Grids Y=5
+Cursor Select Color Primary=#C0C0C0
+Cursor Select Color Secondary=#FF0000
+Data Point Labels Color Fore=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Data Point Labels Color Back=#FFFF00
+OperPoint=True
+AutoScaleRanges=True
+DoPSS=True
+PSS_Periods="1"
+PSS_Iterations="5"
+PSS_Error="1u"
+PSS_ShowPlots=True
+FFT_Min="0"
+FFT_NPts="16384"
+FFT_IncludeDCHarmonic=False
+FFT_AutoScale_Harmonics="10"
+PrinterAutoTile=No
+PrinterBlackBorder=No
+MonMaxShow=6
+MonPageWidth=66
+MonPlotWidth=21
+MonExprXWidth=142
+MonExprYWidth=369
+MonRangeXWidth=90
+MonRangeYWidth=90
+Save_For_Future=No
+Reduce_Display=1
+Reduce_Save=1
+Reduce_ThrowDataOut=0
+Num Out Header Left
+Num Out Header Center="$MC\n$user\n$company\n$Analysis of $name\n$date $time"
+Num Out Header Right
+Num Out Delimiter=32
+Num Out Write=True
+Num Out Write Main Header=True
+Num Out Write Limits=True
+Num Out Write Branch Header=True
+Num Out Write Models=False
+Num Out Write Zero Models=True
+Num Out Write Undefined Models=True
+Num Out Write Operating Point=True
+Num Out Write Measurement Values=True
+Num Out Write Tolerance Detail=True
+Num Out Write Values=True
+Num Out Write Waveform Header=True
+Num Out Allow Dup Y Expr=False
+Num Out Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Num Out Format=3
+Num Out HideNonSelected=False
+Num Out UseActualDataPoints=False
+AutoSaveWave=False
+Wave Format=16E
+State Variables Format=5E
+Print Individual Pages=False
+
+[Tools]
+Pos=Top
+SELECT=Yes
+PAN=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=No
+PARALLELOGRAM=No
+POLYCLOS=No
+POLYOPEN=No
+SCALE=Yes
+CURSOR=Yes
+MEASUREH=Yes
+MEASUREV=Yes
+TAG=Yes
+PTAG=Yes
+TEXT=Yes
+PROPERTY=Yes
+START=Yes
+STOP=Yes
+PAUSE=Yes
+RESUME=No
+DATAPTS=Yes
+TOKENS=Yes
+RULER=Yes
+PLUS=Yes
+XAXIS=Yes
+YAXIS=Yes
+MINORLOG=Yes
+LOG25=Yes
+BASELINE=Yes
+HORIZCUR=Yes
+GOTOX=Yes
+GOTOY=Yes
+GOTOPERF=Yes
+GOTOBRNC=Yes
+CLEAR_ACCUMULATED=Yes
+PDELETE_ALL_PLOTS=Yes
+NEXT=Yes
+NEXTIN=Yes
+PEAK=Yes
+VALLEY=Yes
+HIGH=Yes
+LOW=Yes
+INFLECTN=Yes
+GHIGH=Yes
+GLOW=Yes
+BOTTOM=Yes
+TOP=Yes
+WAVEFORMBUFFER=Yes
+AOUTPUT=Yes
+PKEY=Yes
+ENXSCALE=Yes
+ENYSCALE=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALE=Yes
+RESTORESCALE=No
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+SELNEXT=No
+NORMALIZE=No
+NORMALIZE_MIN=No
+NORMALIZE_MAX=No
+ADD_TAG_LEFT=No
+ADD_TAG_RIGHT=No
+ADD_HORZ_TAG=No
+ADD_VERT_TAG=No
+ALIGN_CURSORS=No
+ALIGN_CURSORSZ=No
+CURSORTOCLIPBOARD=No
+TRACKER_CURSOR=No
+TRACKER_CURSOR_BRANCHINFO=No
+TRACKER_INTERCEPT=No
+TRACKER_MOUSE=No
+TOFRONT=Yes
+TOBACK=Yes
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+LABEL_WAVEFORM=No
+LABEL_DATA_POINTS=No
+WFB_ADD_TO_LIMITS=No
+ENVELOPE=No
+SAMEYSCALES=No
+KEEPXSCALESTHESAME=No
+CURVEFIT=No
+ADD_MARKER=No
+SHOWWATCH=No
+BP=No
+TOGGLEMODE=No
+REMOVEALLTEXT=No
+AUTOSCALEX=No
+LABELALLMINOR=No
+ALIGNLEFT=No
+ALIGNCENTER=No
+ALIGNRIGHT=No
+ALIGNTOP=No
+ALIGNMIDDLES=No
+ALIGNBOTTOM=No
+
+[APage]
+Analysis=HmDistortion
+Name="MAIN"
+
+[Monte Carlo Options]
+Analysis=Transient
+Status=Off
+Zero Tolerance=False
+Eliminate Outliers=False
+Distribution=Normal
+Number of Runs=10
+Seed=0
+
+[Monte Carlo Options]
+Analysis=AC
+Status=Off
+Zero Tolerance=False
+Eliminate Outliers=False
+Distribution=Normal
+Number of Runs=10
+Seed=0
+
+[Monte Carlo Options]
+Analysis=DC
+Status=Off
+Zero Tolerance=False
+Eliminate Outliers=False
+Distribution=Normal
+Number of Runs=10
+Seed=0
+
+[Monte Carlo Options]
+Analysis=HmDistortion
+Status=Off
+Zero Tolerance=False
+Eliminate Outliers=False
+Distribution=Normal
+Number of Runs=10
+Seed=0
+
+[Performance]
+Analysis=HmDistortion
+WinID=7
+Window Placement=0,1, -1,-1, -8,-31, 0,0,761,582
+Font=Height=-19,FStyle=0,Color=#0000FF,Name=Arial
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Title=THD vs POUT : F = 1K
+AutoTitle=Yes
+ShowWin=True
+Grid Color=#808080
+Grid Weight=1
+Grid Pattern=Dot6
+Tracker Foreground=Height=-15,FStyle=0,Color=#000000,Name=Arial
+Tracker Background=#FFFF00
+Baseline color=#0000FF
+BaseLine Weight=1
+CurveFit color=#FF0000
+CurveFit Weight=2
+CurveFit Pattern=Dash
+Static Grids=False
+PlusMark=False
+Label Color Background=#FFFFFF
+MinorLog25=Off
+LabelMinor=Off
+DataPoints=True
+Token=False
+Ruler=False
+XAxisGrids=True
+YAxisGrids=True
+MinorLogGrids=False
+BaseLine=False
+AlignZ=True
+Align Cursors=True
+TagFormatX=3
+TagFormatY=3
+FormulaFormat=2
+EndMode=SCALE
+Graph Background=#FFFFFF
+Tracker Intercept=False
+Tracker Mouse=True
+Tracker Cursor=True
+Horizontal Cursor=False
+Same Y Scales=Yes
+Enable X Scaling=True
+Enable Y Scaling=True
+Keep X Scales The Same=True
+Number of Grids X=5
+Number of Grids Y=5
+UpdateDuringRun=True
+Num Out Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Num Out File Auto=True
+Num Out File
+Num Out Header Left
+Num Out Header Center="$MC\n$user\n$company\n$Analysis of $name\n$date $time"
+Num Out Header Right
+Num Out Delimiter=32
+Num Out Group by=F
+Num Out Write Main Header=True
+Num Out Write Limits=True
+Num Out Write Branch Header=True
+Num Out Write Variable Header=True
+
+[Tools]
+Pos=Top
+SELECT=Yes
+PAN=Yes
+GRAPHIC=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=No
+PARALLELOGRAM=No
+POLYCLOS=No
+POLYOPEN=No
+SCALE=Yes
+CURSOR=Yes
+MEASUREH=Yes
+MEASUREV=Yes
+TAG=Yes
+PTAG=Yes
+TEXT=Yes
+PROPERTY=Yes
+DATAPTS=Yes
+TOKENS=Yes
+RULER=Yes
+PLUS=Yes
+XAXIS=Yes
+YAXIS=Yes
+MINORLOG=Yes
+LOG25=Yes
+BASELINE=Yes
+HORIZCUR=Yes
+GOTOX=Yes
+GOTOY=Yes
+GOTOPERF=Yes
+GOTOBRNC=Yes
+NEXT=Yes
+NEXTIN=Yes
+PEAK=Yes
+VALLEY=Yes
+HIGH=Yes
+LOW=Yes
+INFLECTN=Yes
+GHIGH=Yes
+GLOW=Yes
+ENXSCALE=Yes
+ENYSCALE=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALE=Yes
+RESTORESCALE=No
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+SELNEXT=No
+NORMALIZE=No
+NORMALIZE_MIN=No
+NORMALIZE_MAX=No
+ADD_TAG_LEFT=No
+ADD_TAG_RIGHT=No
+ADD_HORZ_TAG=No
+ADD_VERT_TAG=No
+ALIGN_CURSORS=No
+ALIGN_CURSORSZ=No
+CURSORTOCLIPBOARD=No
+TRACKER_CURSOR=No
+TRACKER_CURSOR_BRANCHINFO=No
+TRACKER_INTERCEPT=No
+TRACKER_MOUSE=No
+TOFRONT=Yes
+TOBACK=Yes
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+LABEL_WAVEFORM=No
+LABEL_DATA_POINTS=No
+SAMEYSCALES=No
+KEEPXSCALESTHESAME=No
+CURVEFIT=No
+ADD_MARKER=No
+TOGGLEMODE=No
+REMOVEALLTEXT=No
+AUTOSCALEX=No
+LABELALLMINOR=No
+ALIGNLEFT=No
+ALIGNCENTER=No
+ALIGNRIGHT=No
+ALIGNTOP=No
+ALIGNMIDDLES=No
+ALIGNBOTTOM=No
+
+[APage]
+
+[Performance WaveForm]
+;HmDistortion
+Designator=Simple
+WhatToPlotY=THDV(%)
+WhatToPlot=POUT(dB)
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3
+NOFmtY=3
+DPS=Open Bubbles
+CS=Normal
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+PlotNum=1
+AliasID=1
+Enable=0
+Auto Scale X=Yes
+Auto Scale Y=Yes
+Range Min X=-48
+Range Min Y=3.1622776601683728e-005
+Range Max X=12
+Range Max Y=0.0099999999999999898
+Range Grid X=12
+Range Grid Y=0
+Range Bold X=0
+Range Bold Y=0
+LinearX=True
+LinearY=False
+Show Labels=True
+Labels Default Font=Height=-19,FStyle=0,Color=#0000FF,Name=Arial
+
+[DistNumOut]
+F=0
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+VIN(dB)=1
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+VIN=2
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+VOUT(dB)=3
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+VOUT=4
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+PIN(dB)=5
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PIN(dBm)=6
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PIN=7
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+POUT(dB)=8
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+POUT(dBm)=9
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+POUT=10
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+VIN_RMS(dB)=11
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+VIN_RMS=12
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+VOUT_RMS(dB)=13
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+VOUT_RMS=14
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+PIN_RMS(dB)=15
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PIN_RMS(dBm)=16
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PIN_RMS=17
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+POUT_RMS(dB)=18
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+POUT_RMS(dBm)=19
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+POUT_RMS=20
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+User=True
+THDV(%)=21
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+User=True
+THDV(dB)=22
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+User=True
+THDV=23
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+User=True
+THDP(%)=24
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+User=True
+THDP(dB)=25
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+User=True
+THDP(dBm)=26
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+User=True
+THDP=27
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+THDNV(%)=28
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+THDNV(dB)=29
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+THDNV=30
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+THDNP(%)=31
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+THDNP(dB)=32
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+THDNP(dBm)=33
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+THDNP=34
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SINADV(%)=35
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SINADV(dB)=36
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SINADV=37
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SINADP(%)=38
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SINADP(dB)=39
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SINADP(dBm)=40
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SINADP=41
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SNRV(%)=42
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SNRV(dB)=43
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SNRV=44
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SNRP(%)=45
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SNRP(dB)=46
+Show=True
+ScaleUnits="Auto"
+
+[DistNumOut]
+SNRP(dBm)=47
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+SNRP=48
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1V(%)=49
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1_RMSV(%)=50
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1V(dB)=51
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1_RMSV(dB)=52
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1V=53
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1_RMSV=54
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1P(%)=55
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1_RMSP(%)=56
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1P(dB)=57
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1_RMSP(dB)=58
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1P(dBm)=59
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1_RMSP(dBm)=60
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1P=61
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H1_RMSP=62
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+GAINV(%)=63
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+GAINV(dB)=64
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+GAINV=65
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+GAINP(%)=66
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+GAINP(dB)=67
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+GAINP(dBm)=68
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+GAINP=69
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PHASEV(%)=70
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PHASEV(dB)=71
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PHASEV=72
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PHASEP(%)=73
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PHASEP(dB)=74
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PHASEP(dBm)=75
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+PHASEP=76
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2V(%)=77
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2_RMSV(%)=78
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2V(dB)=79
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2_RMSV(dB)=80
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2V=81
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2_RMSV=82
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2P(%)=83
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2_RMSP(%)=84
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2P(dB)=85
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2_RMSP(dB)=86
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2P(dBm)=87
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2_RMSP(dBm)=88
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2P=89
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H2_RMSP=90
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3V(%)=91
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3_RMSV(%)=92
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3V(dB)=93
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3_RMSV(dB)=94
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3V=95
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3_RMSV=96
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3P(%)=97
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3_RMSP(%)=98
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3P(dB)=99
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3_RMSP(dB)=100
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3P(dBm)=101
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3_RMSP(dBm)=102
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3P=103
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H3_RMSP=104
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4V(%)=105
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4_RMSV(%)=106
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4V(dB)=107
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4_RMSV(dB)=108
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4V=109
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4_RMSV=110
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4P(%)=111
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4_RMSP(%)=112
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4P(dB)=113
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4_RMSP(dB)=114
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4P(dBm)=115
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4_RMSP(dBm)=116
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4P=117
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H4_RMSP=118
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5V(%)=119
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5_RMSV(%)=120
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5V(dB)=121
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5_RMSV(dB)=122
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5V=123
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5_RMSV=124
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5P(%)=125
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5_RMSP(%)=126
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5P(dB)=127
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5_RMSP(dB)=128
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5P(dBm)=129
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5_RMSP(dBm)=130
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5P=131
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H5_RMSP=132
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6V(%)=133
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6_RMSV(%)=134
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6V(dB)=135
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6_RMSV(dB)=136
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6V=137
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6_RMSV=138
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6P(%)=139
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6_RMSP(%)=140
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6P(dB)=141
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6_RMSP(dB)=142
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6P(dBm)=143
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6_RMSP(dBm)=144
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6P=145
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H6_RMSP=146
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7V(%)=147
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7_RMSV(%)=148
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7V(dB)=149
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7_RMSV(dB)=150
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7V=151
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7_RMSV=152
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7P(%)=153
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7_RMSP(%)=154
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7P(dB)=155
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7_RMSP(dB)=156
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7P(dBm)=157
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7_RMSP(dBm)=158
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7P=159
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H7_RMSP=160
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8V(%)=161
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8_RMSV(%)=162
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8V(dB)=163
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8_RMSV(dB)=164
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8V=165
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8_RMSV=166
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8P(%)=167
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8_RMSP(%)=168
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8P(dB)=169
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8_RMSP(dB)=170
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8P(dBm)=171
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8_RMSP(dBm)=172
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8P=173
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H8_RMSP=174
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9V(%)=175
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9_RMSV(%)=176
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9V(dB)=177
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9_RMSV(dB)=178
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9V=179
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9_RMSV=180
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9P(%)=181
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9_RMSP(%)=182
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9P(dB)=183
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9_RMSP(dB)=184
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9P(dBm)=185
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9_RMSP(dBm)=186
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9P=187
+Show=False
+ScaleUnits="Auto"
+
+[DistNumOut]
+H9_RMSP=188
+Show=False
+ScaleUnits="Auto"
+
+[Limits]
+Analysis=Transient
+TMax=5m
+TStart=0
+TStep=50u
+NPts=51
+Temp=27
+RetraceRuns=1
+StateVar=Zero
+RunOption=Normal
+Temperature Type=Linear
+Accumulate Plots=False
+IgnoreExprErrors=False
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+AliasID=1
+XExp=T
+YExp=v(V1)
+XRng=0.005
+YRng=Auto
+Options=LINEARX,LINEARY
+Range Grid X=0.001
+Enable=DontRun
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+AliasID=2
+XExp=T
+YExp=v(Vout)
+XRng=0.005
+YRng=45,-30
+Options=LINEARX,LINEARY
+Range Grid X=0.001
+Range Grid Y=15
+Enable=Enable
+Line Color=#FF00FF
+Text Color=#FF00FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+AliasID=6
+XExp=T
+YExp=v(Vin)
+XRng=0.005
+YRng=45,-30
+Options=LINEARX,LINEARY
+Range Grid X=0.001
+Range Grid Y=15
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+Plt=2
+AliasID=3
+XExp=T
+YExp=100*avg(pd(Rp))/(avg(-v(V6)*i(V6))+avg(-v(V7)*i(V7)))
+XRng=0.005
+YRng=100
+Options=LINEARX,LINEARY
+Range Grid X=0.001
+Range Grid Y=20
+Enable=DontRun
+Line Color=#008000
+Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+Plt=3
+AliasID=7
+XExp=T
+YExp=v(-Vcc)
+XRng=0.005
+YRng=0,-60
+Options=LINEARX,LINEARY
+Range Grid X=0.001
+Range Grid Y=12
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+Plt=4
+AliasID=5
+XExp=T
+YExp=v(Vcc)
+XRng=0.005
+YRng=72,12
+Options=LINEARX,LINEARY
+Range Grid X=0.001
+Range Grid Y=12
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+Plt=5
+AliasID=4
+XExp=T
+YExp=100*rms(pd(Rp))/(rms(-v(V6)*i(V6))+rms(-v(V7)*i(V7)))
+XRng=0.005
+YRng=100
+Options=LINEARX,LINEARY
+Range Grid X=0.001
+Range Grid Y=20
+Enable=Enable
+Line Color=#008080
+Text Color=#008080
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[Limits]
+Analysis=AC
+FRange=310k,1
+NPts=1001
+Temp=27
+MaxChng=5
+NInput=NONE
+NOutput=2
+Sweep type=Log
+StateVar=Zero
+RunOption=Normal
+Temperature Type=Linear
+Accumulate Plots=False
+IgnoreExprErrors=False
+FirstValueDisplay=Mag
+SecondValueDisplay=PhaseDeg
+DisplayValuesInProbe=DC
+
+[WaveForm]
+Analysis=AC
+Plt=1
+AliasID=1
+XExp=F
+YExp=dB(v(Vout)/v(Vg))
+XRng=310000,1
+YRng=60,-40
+Options=LINEARY
+Range Grid X=61999.8
+Range Grid Y=20
+Enable=Enable
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=AC
+Plt=2
+AliasID=2
+XExp=F
+YExp=phase(v(Vout)/v(Vg))
+XRng=310000,1
+YRng=0,-500
+Options=LINEARY
+Range Grid X=61999.8
+Range Grid Y=100
+Enable=Hide
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=AC
+Plt=2
+AliasID=5
+XExp=F
+YExp=phase(v(Vout)/v(Vg))
+XRng=310000,1
+YRng=0,-500
+Options=LINEARY
+Range Grid X=61999.8
+Range Grid Y=100
+Enable=Hide
+Line Color=#008000
+Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=AC
+Plt=3
+AliasID=3
+XExp=F
+YExp=db(v(Vout)/V(V_unf))
+XRng=310000,1
+YRng=7.5,-30
+Options=LINEARY
+Range Grid X=61999.8
+Range Grid Y=7.5
+Enable=Hide
+Line Color=#008000
+Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=AC
+Plt=4
+AliasID=4
+XExp=F
+YExp=PHASE_MARGIN(dB(v(Vout)/v(Vg))/phase(v(Vout)/v(Vg)))
+XRng=310000,1
+YRng=5,-20
+Options=LINEARY
+Range Grid X=61999.8
+Range Grid Y=5
+Enable=DontRun
+Line Color=#FF00FF
+Text Color=#FF00FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[Limits]
+Analysis=DC
+I1Range=10,0,.5
+NPts=51
+Temp=27
+MaxChng=5
+StateVar=Zero
+RunOption=Normal
+Temperature Type=Linear
+Accumulate Plots=False
+IgnoreExprErrors=False
+Sweep1 type=Auto
+Sweep2 type=None
+
+[WaveForm]
+Analysis=DC
+Plt=1
+AliasID=1
+XExp=DCINPUT1
+YExp=v(Vin)
+XRng=Auto
+YRng=Auto
+Options=LINEARX,LINEARY
+Enable=Enable
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=DC
+AliasID=-1
+Options=LINEARX,LINEARY
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=DC
+AliasID=-1
+Options=LINEARX,LINEARY
+Enable=Enable
+Line Color=#008000
+Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[Limits]
+Analysis=HmDistortion
+F0=1K
+ISource=VG
+ISourceAmp=100m,1m,2
+SourceRes=None
+ResLoad=RP
+NoiseFreqRange=100K,1
+Temp=27
+Cycles=50
+THDStopTol=1u
+TStepRatio=1m
+Harmonics=7
+NTPts=51
+NFPts=51
+FreqMethod=List
+AmpMethod=Log
+PlaceText=True
+StateVar=Zero
+RunOption=Normal
+Temperature Type=Linear
+Accumulate Plots=False
+IgnoreExprErrors=False
+
+[WaveForm]
+Analysis=HmDistortion
+Plt=1
+AliasID=1
+XExp=F
+YExp=HARM(V(RP))
+XRng=10000
+YRng=1e+8,1e-12
+Options=LINEARX
+Range Grid X=1000
+Enable=Enable
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=True
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=1
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=HmDistortion
+Plt=2
+AliasID=2
+XExp=T
+YExp=V(RP)
+XRng=0.00125
+YRng=3,-2
+Options=LINEARX,LINEARY
+Range Grid X=0.00025
+Range Grid Y=1
+Enable=Enable
+Line Color=#FF0000
+Text Color=#FF0000
+Rainbow=True
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=HmDistortion
+AliasID=-1
+XExp=F
+YExp=THD(HARM(V(RP)))
+XRng=10000
+YRng=0.00375
+Options=LINEARX,LINEARY
+Range Grid X=1000
+Range Grid Y=0.00075
+Enable=Enable
+Line Color=#008000
+Text Color=#008000
+Rainbow=True
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=1
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=HmDistortion
+AliasID=-1
+XExp=F
+YExp=THDN(HARM(V(RP)))
+XRng=10000
+YRng=0.04
+Options=LINEARX,LINEARY
+Range Grid X=1000
+Range Grid Y=0.008
+Enable=Enable
+Line Color=#FF00FF
+Text Color=#FF00FF
+Rainbow=True
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=1
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=HmDistortion
+AliasID=-1
+XExp=F
+YExp=HARM(I(VG))
+XRng=10000
+YRng=10000,1e-16
+Options=LINEARX
+Range Grid X=1000
+Enable=Enable
+Line Color=#000000
+Text Color=#000000
+Rainbow=True
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=1
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=HmDistortion
+AliasID=-1
+XRng=Auto
+YRng=Auto
+Options
+Enable=Enable
+Line Color=#0000FF
+Text Color=#0000FF
+Rainbow=True
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[Limits]
+Analysis=DynamicAC
+FirstValueDisplay=Mag
+SecondValueDisplay=PhaseDeg
+PlaceText=True
+
+[Limits]
+Analysis=DynamicDC
+Temp=27
+SliderPer=10
+PlaceText=True
+
+[Pane]
+Analysis=Transient
+CurrentPage 0="MAIN"
+
+[Pane]
+Analysis=AC
+CurrentPage 0="MAIN"
+
+[Pane]
+Analysis=DC
+
+[Pane]
+Analysis=HmDistortion
+CurrentPage 0="MAIN"
+
+[Pane]
+Analysis=ImDistortion
+
+[Pane]
+Analysis=Stability
+
+[Stepping]
+Analysis=Transient
+Index=1
+Parameter Type=Component
+Name=VG
+Param=A
+From=0.1
+To=1.5
+Value=500m
+
+[Watch]
+Analysis=Transient
+Format=3
+ExprPercentWidth=80
+
+[Watch]
+Analysis=AC
+Format=3
+ExprPercentWidth=80
+
+[Watch]
+Analysis=DC
+Format=3
+ExprPercentWidth=80
+
+[Watch]
+Analysis=HmDistortion
+Format=3
+ExprPercentWidth=80
+
+[TF]
+Output=V(Vout)
+Output=V(10)
+Output=V(V_unf)
+Input Source=VG
+Place Text=True
+
+[WCTolerance]
+Var Width=100
+Nominal Width=72
+Tol Width=152
+Tol Name=Drift
+Col Width Neq=50
+Col Width Pos=50
+Col Width Rnd=50
+
+[WCFiles]
+UseFile=<Library>Standard.tlib
+AVAILABLE_FILE=<Library>Standard.tlib
+
+[OPMethods]
+Analysis=Transient
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=AC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=HmDistortion
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=ImDistortion
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=Stability
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DynamicAC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DynamicDC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
