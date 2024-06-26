@@ -24,6 +24,8 @@ This project simulates an audio amplifier using MicroCap12.Requirements are as f
 
 Design an audio amplifier. It must contain a voltage amplification stage and an AB output stage. Implement the amplification stage using transistors or op-amps, with freedom of choice. Implement the AB output stage using transistors. The transistor can be bipolar or MOSFET. Select all components and explain their choice, show the calculation of critical components. Calculate the maximum efficiency coefficient. Perform circuit simulation in Microcap. Use DC analysis to check the quiescent currents of the amplifier. Use transient simulations to verify the circuit's operation, find the maximum input voltage, and measure the circuit gain in the linear regime. Use AC analysis to check the bandwidth of the amplifier. The speaker parameters are resistance R = 8Ω and power P = 40W.
 
+Note:Detailed documentation is also in the repository if you wish to know how to calculate parameters of each sub-block.In the following sections there will only be brief description of each sub-block with general formulas. 
+
 ## Sub-blocks
 
 The circuit contains the following important sub-blocks:
@@ -51,7 +53,7 @@ The circuit contains the following important sub-blocks:
 
 2. **Clone the Repository:**
    ```bash
-   git clone https://github.com/Meg4Byte/Stepper-Motor-Simulation.git
+   git clone https://github.com/Meg4Byte/Audio-Amp.git
 
 ## Usage Instructions
 
@@ -59,9 +61,10 @@ The circuit contains the following important sub-blocks:
    - Launch MicroCap12 , click on the open project icon in top left corner and open the project file .
 
  #### Run the Simulation:
-   - Click on the 'Analysis' button to start the transient analysis.
-   - Observe the output waveforms for motor acceleration, velocity, torque, and angle.
-   - Change in control signals , add load and observe the output.
+   - Click on the 'Analysis' button to start the desired analysis .
+   - Run DC ,Dynamic DC , Transient , AC analysis and find transfer function of the circuit. 
+   - Observe the output waveforms and tweak each sub-block's elements to get desired performance .
+   - Change input signals and observe the behaviour of the circuit .
 
 ## Contributing
 
