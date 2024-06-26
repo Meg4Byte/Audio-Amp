@@ -12,7 +12,7 @@ Audio amplifier design and simulation in MicroCap-12
   - [Input filter](#input-filter)
   - [Op-amp](#op-amp)
   - [Bias circuit](#bias-circuit)
-  - [AB stage (power amplifier)](#ab-stage)
+  - [AB stage (power amplifier)](#ab-stage-power-amplifier)
   - [Output filter](#output-filter)
   - [Negative feedback](#negative-feedback)
 - [Schematic](#schematic)
